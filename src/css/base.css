@@ -1,0 +1,144 @@
+:root {
+    --primary-color: #1ec6b6;
+    --secondary-color: #FF4A52;
+    --text-color: #040E27;
+}
+
+* {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6em;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+ul, li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+label, h5, p {
+    margin: 0;
+}
+
+.align-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.clear::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.btn {
+    width: 134px;
+    padding: 11px 20px;
+    border-radius: 5px;
+    
+    font-size: 1.8rem;
+
+    font-weight: 700;
+
+    background-color: var(--secondary-color);
+    color: #fff;
+
+    border: 0;
+    cursor: pointer;
+    transition: .6s;
+}
+
+.btn:hover {
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+.carousel-item {
+    height: 415px;
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth {
+    from {
+        transform: scale(var(--growth-begin));
+    }
+    to {
+        transform: scale(var(--growth-end));
+    }
+}
+
+/* ------------ Modal ------------------------ */
+.modal-form {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: flex;
+    z-index: 100;
+}
+
+.modal-form__overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.8);
+
+    animation: fade linear 0.2s;
+}
+
+.modal__content {
+    --growth-begin: 0.6;
+    --growth-end: 1;
+
+    margin: auto;
+
+    animation: growth linear 0.2s;
+    z-index: 100;
+
+}
+
+.modal__content .modal__content-login {
+    display: none;
+}
+
+.modal-form.hide {
+    display: none;
+}
+
+.modal__content .modal__content-login.show {
+    display: block;
+}
+
+.modal-form .modal__content-login.show ~ .modal__content-register {
+    display: none;
+}

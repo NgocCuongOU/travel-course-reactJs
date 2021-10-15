@@ -1,0 +1,266 @@
+html, body, #main {
+    height: 100%;
+}
+
+header .head_inner {
+    justify-content: flex-end;
+}
+
+.form-group .form-message-login {
+    display: inline-block;
+    width: 100%;
+    border-radius: 4px;
+    padding: 4px 0px;
+
+    font-size: 1.4rem;
+    font-weight: 500;
+    text-align: center;
+    
+}
+
+.form-label-lg {
+    font-size: 1.4rem;
+}
+
+.heading-stats {
+    font-size: 2.6em !important;
+    color: var(--secondary-color);
+}
+
+.heading-canvas {
+    text-align: center;
+    margin-top: 60px;
+    margin-bottom: 30px;
+    
+    font-size: 3.6rem;
+}
+
+.btn-stats {
+    border: 1px solid #86dbd3;
+    border-radius: 3px;
+    padding: 4px 8px;
+    
+    font-size: 1.4rem;
+    font-weight: 500;
+    
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+canvas#myTourStats {
+    height: 0px;
+    width: 0px;
+    transition: 0.5s;
+}
+
+.form-group .form-message-login.error {
+    border: 1px solid #ffdae6;
+    
+    color: var(--secondary-color);
+    background-color: lavenderblush;
+}
+
+.form-group .form-message-login.success {
+    border: 1px solid #4ffedd;
+    color: #ffffff;
+    background-color: var(--primary-color);
+}
+
+.text-danger, textarea.form-control {
+    font-size: 1.4rem;
+}
+
+.main-content .main-table .main-title {
+    margin-bottom: 10px;
+}
+
+.main-content .main-table .user-table {
+    max-height: 400px;
+}
+
+.main-content .main-table .user-table.booking-tour {
+    max-height: unset;
+}
+
+.main-content .main-table .form-search {
+    position: relative;
+    width: 300px;
+    height: 45px;
+}
+
+.main-content .main-table .form-search input {
+    width: 100%;
+    height: 100%;
+    padding: 10px 15px;
+    border: none;
+    font-size: 1.4rem;
+    box-shadow: 0 0 8px rgb(223 223 223);
+}
+
+.main-content .main-table .form-search input:focus {
+    outline: none;
+}
+
+.main-content .main-table .form-search button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 100%;
+    border: none;
+    font-size: 2em;
+    text-align: center;
+    color: #fff;
+    background-color: var(--secondary-color);
+    cursor: pointer;
+}
+
+.main-content .main-table .form-add div input {
+    padding: 8px;
+
+    font-size: 1.4rem;
+}
+
+
+.main-content .main-table .form-add div label {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.main-content .main-table .form-add div div span,
+.main-content .main-table .form-add div div.input-group input {
+    font-size: 1.4rem;
+}
+
+.book-required {
+
+    display: inline-block;
+    padding-left: 4px;
+    padding-right: 4px;
+    color: var(--secondary-color);
+}
+
+.main-content .main-table .form-add div select {
+    font-size: 1.4rem;
+}
+
+.main-content > .main-table > .form-add div .btn {
+    padding: 8px 28px;
+
+    font-size: 1.8rem;
+    font-weight: 500;
+
+    color: #fff;
+    background-color: var(--primary-color);
+    transition: all 0.2s linear;
+}
+
+.main-content .main-table .form-add div .btn:hover {
+    opacity: 0.8;
+}
+
+.main-table .form-add .form-check label {
+    margin-left: 10px;
+
+    line-height: 24px;
+    font-size: 1.4rem;
+}
+
+.form-check {
+    margin-bottom: 10px;
+}
+
+.form-check-input {
+    margin-top: 5px;
+}
+
+
+.main-table .user-table table td .user-delete,
+.main-table .user-table table td .user-edit {
+    padding: 8px;
+    margin-right: 8px;
+
+    font-size: 1.8rem;
+
+    color: var(--primary-color);
+}
+
+.main-table .user-table table td .user-delete {
+    color: var(--secondary-color);
+}
+
+.main-table .user-table table td .user-edit:hover,
+.main-table .user-table table td .user-delete:hover {
+    opacity: 0.8;
+}
+
+/* ---------------- summernote -------------------- */
+.note-btn.btn {
+    padding: 8px 12px !important;
+    font-size: 1.4rem !important;
+    font-weight: 400 !important;
+    width: auto;
+}
+
+.note-editable {
+    font-size: 1.8rem;
+}
+
+/* --------------- Responsive ------------- */
+@media screen and (max-width: 425px) {
+    .main-content .main-table .form-search {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .row {
+        --bs-gutter-x: -0.5rem;
+    }
+
+    .main-content .main-table .main-title h2 {
+        text-align: center;
+    }
+
+    .main-content .main-table .form-add .btn-wrapper {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .main-content .main-table .user-table {
+        overflow-x: scroll;
+    }
+
+    .main-content .main-table .user-table table {
+        width: 180%;
+    }
+
+    .main-table .user-table table tbody tr td {
+        padding-right: 10px;
+    }
+}
+
+@media screen and (max-width: 1119px) {
+    .main-content .main-table .user-table table {
+        width: 180%;
+    }
+}
+
+
+/* ------------ update -------------- */
+.img-tour-detail {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+}
+
+.img-tour-detail .img-tour-detail__img {
+    display: inline-block;
+
+    width: 100%;
+    height: 100%;
+    border-radius: 6px;
+    
+    object-fit: cover;
+    
+}

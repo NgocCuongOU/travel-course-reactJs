@@ -1,0 +1,107 @@
+@media screen and (max-width: 1119px) {
+    .main-content .main-table .user-table table {
+        width: 180%;
+    }
+}
+
+
+/* Tablet */
+@media screen and (max-width: 992px) {
+    .side-bar {
+        left: -300px;
+        z-index: 100;
+    }
+
+    .side-bar.hide {
+        left: 0;
+        width: 300px;
+        overflow-y: auto;
+    }
+
+    header, .main-content {
+        margin: 0;
+    }
+    
+    
+    .input-form-stats {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+
+    .slide-left {
+        margin-left: 0;
+    }
+
+    .side-bar.hide .side-bar-nav ul li div .nav-link {
+        display: block;
+    }
+
+    .side-bar.hide li .link-wrapper ~ .side-bar-subnav-1 .hide-nav,
+    .side-bar.hide li .link-wrapper ~ .side-bar-subnav-2 .hide-nav{
+        display: block;
+    }
+
+    .main-content .main-table .user-table table {
+        width: 180%;
+    }
+
+    .side-bar.hide .avtar .name-pos,
+    .side-bar.hide .side-bar-nav ul li a .nav-link {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .main-content .info-card .card {
+        width: 48%;
+        margin-bottom: 15px;
+    }
+
+    header .head_inner .right-part form {
+        width: 200px;
+        height: 40px;
+    }
+
+    .main-content .main-table .user-table {
+        overflow-x: auto;
+    }
+
+    .main-content .main-table .user-table table {
+        width: 1100px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    header .head_inner {
+        flex-direction: column-reverse;
+    }
+
+    header .head_inner .right-part form {
+        width: 100%;
+        height: 40px;
+    }
+
+    header .head_inner .right-part,
+    header .head_inner .left-part {
+        width: 100%;
+        margin: 15px;
+    }
+
+    header .head_inner .left-part ul {
+        justify-content: space-between;
+    }
+
+    header .head_inner .left-part ul li:first-child {
+        margin-left: 0;
+    }
+
+    .main-content .info-card .card {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    header .head_inner .left-part ul li {
+        margin-left: 15px;
+    }
+}

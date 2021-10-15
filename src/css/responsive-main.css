@@ -1,0 +1,621 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 10, 2021, 10:28:21 AM
+    Author     : CaoNgocCuong
+*/
+
+/* ----------------- laptop --------------------------- */
+@media (max-width: 1336px) {
+    .header .socials-wrap {
+        display: none;
+    }
+    
+    .search-wrap .search-form .form-item:not(:last-child) {
+        width: 25%;        
+    }
+    
+    .search-wrap .search-form .form-item:not(:last-child) input {
+        font-size: 1.6rem;
+    }
+
+    .single-place .place-info {
+        padding: 10px;
+    }
+    
+    .single-place .place-info a h3 {
+        font-size: 1.4rem;
+    }
+    
+    .single-place .rating-days {
+        display: block
+    }
+    
+    .single-place .rating-days span {
+        display: block;
+        padding: 6px 0;
+    }
+    
+    .login .user-wrapper .user-icon {
+        margin: 0;
+    }
+}
+
+/* ----------------- Mobile and Tablet --------------------------- */
+@media (max-width: 1023px) {
+    .d-reverse-mobile {
+        flex-direction: column-reverse;
+    }   
+    
+    .hide-on-tablet {
+        display: none;
+    }
+    
+    #header {
+        height: 85px;
+    }
+    
+    .slider {
+        margin-top: 80px;
+    }
+    
+    .header .navbar-list .navbar-list__item {
+        font-size: 1.4rem;
+    }
+    
+    .header .socials-list .socials-list__item {
+        margin-right: 10px;
+    }
+    
+    .search-wrap .search-form .form-item:not(:last-child) {
+        width: 25%;        
+    }
+    
+    .login .user-wrapper .user-icon,
+    .search-wrap .search-form .form-item:not(:last-child) input {
+        font-size: 1.6rem;
+    }
+    
+    .search-area {
+        padding-top: 15px;
+    }
+    
+    .user-dropdown,
+    .header .navbar-list .navbar-list__item .sub-nav {
+        top: 40%;
+    }
+    
+    .header .navbar-list .navbar-list__item:hover .sub-nav {
+        top: 101%;
+    }
+    
+    .search-wrap .search-form .form-item select {
+        font-size: 1.4rem;
+    }
+    
+    .user-wrapper .wrap:hover .user-dropdown {
+        top: 107%;
+    }
+    
+    .popular-place .single-place .thumb a {
+        left: 10px;
+        padding: 4px 18px 4px 18px;
+        
+        font-size: 1.4em;
+    }
+    
+    .testimonial-area .testimonial-main {
+        width: 2880px;
+    }
+    
+    #testimonial-radio1:checked ~ .testimonial-slide.first {
+        margin-left: 0;
+    }
+    
+    #testimonial-radio2:checked ~ .testimonial-slide.first {
+        margin-left: -720px;
+    }
+    
+    #testimonial-radio3:checked ~ .testimonial-slide.first  {
+        margin-left: -1440px;
+    }
+    
+    #testimonial-radio4:checked ~ .testimonial-slide.first {
+        margin-left: -2160px;
+    }
+    
+    .testimonial-slide {
+        width: 720px;
+    }
+    
+    .login .user-wrapper .user-down,
+    .login .user-wrapper .user-icon,
+    .login .user-wrapper .user-header,
+    .user-dropdown .btn-login-wrap .btn-login {
+        font-size: 1.4rem;
+    }
+    
+    .login .user-wrapper .user-header {
+        margin: 0;
+        padding-right: 4px;
+        
+        font-size: 1.6rem;
+    }
+    
+    .login .user-wrapper .user-icon {
+        margin: 0;
+        padding-left: 0;
+    }
+    
+    .login .user-wrapper .user-down {
+        padding: 12px 0;
+    }
+    
+    .user-dropdown {
+        min-width: 200px;
+    }
+
+    .footer-widget .footer-info__item {
+        height: auto;
+    }
+    
+    #main .bradcam {
+        margin-top: 80px;
+    }
+    
+    .blog__right-sidebar .single-sidebar-widget {
+        padding: 20px;
+    }
+    
+    .single-sidebar-widget .btn-sidebar {
+        padding: 8px 0px;
+    }
+    
+    .recent-post .media {
+        display: block;
+    }
+    
+    .recent-post .post-item .post-item__img {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .recent-post .post-item .post-item__img a {
+        display: inline-block;
+    }
+    
+    .post-item .post-item__body {
+        padding: 0;
+        height: 65px;
+    }
+    
+    .instagram-feed .instagram-list__item {
+        width: 50%;
+    }
+}
+
+
+
+/* ---------------------------- Tablet ------------------------------ */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .travel-main {
+        margin: 100px 0;
+    }
+    
+    .newsletter_field {
+        margin-bottom: 20px;
+        margin-top: 14px;
+    }
+    
+    .footer-widget .footer-logo {
+        margin-bottom: 4px;
+    }
+   
+    .footer-widget .footer-title {
+        margin-bottom: 30px;
+        
+        font-size: 1.8rem;
+    }
+    
+}
+
+
+/*---------------------------------- Mobile ----------------------- */
+@media (max-width: 739px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .header .socials-wrap {
+        display: block;
+    }
+    
+    #header {
+        height: 80px;
+    }
+    
+    .mg-bottom {
+        margin-bottom: 0px !important;
+    }
+    
+    .bars-top {
+        display: block;
+        
+        cursor: pointer;
+        transition: 0.3s;
+    }
+    
+    .search-area {
+        margin-top: 80px;
+    }
+    
+    .no-gutters-mobile {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    .header .navbar-list {
+        position: relative;
+        top: 0;
+        left: -100%;
+    
+        display: none;
+        background-color: #505768;
+        transition: all 0.3s;
+    }
+    
+    .login, .login .user-wrapper {
+        background-color: #505768;
+        transition: all 0.3s;
+    }
+    
+    .bars-top.active ~ .navbar-list {
+        display: block;
+        
+        left: 0;
+    }
+    
+    .header .navbar-list .navbar-list__item {
+        padding-left: 15px;
+        margin: 0;
+        font-size: 1.6rem;
+    }
+
+    
+    .header .navbar-list__item .sub-nav {
+        width: 100%;
+        
+        background-color: #6f737e;
+    }
+    
+    
+    .bars-top:hover,
+    .navbar-list__item .sub-nav .sub-nav__list:hover a {
+        color: var(--primary-color);
+    }
+    
+    .login, .login .user-wrapper {
+        justify-content: space-between;
+        padding: 10px;
+       
+    }
+    
+    .user-dropdown {
+        right: -5px;
+    }
+    
+    .user-wrapper .wrap:hover .user-dropdown {
+        top: 100%;
+    }
+
+    
+    .navbar-list__item .sub-nav .sub-nav__list {
+        padding-left: 20px;
+    }
+    
+    .login, .login .user-wrapper,
+    .header .socials-list .socials-list__item a,
+    .header .navbar-list .navbar-list__item a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        
+        color: #FFF;
+    }
+    
+    .header .navbar-list .navbar-list__item a {
+        display: block;
+        padding: 12px 15px;
+    }
+    
+    .search-area .form-ask h3 {
+        font-size: 1.8rem;
+    }
+    
+    .search-area {
+        height: auto;
+        padding-top: 50px;
+    }
+    
+    .search-area .search-wrap .search-form {
+        flex-direction: column;
+    }
+    
+    .search-wrap .search-form .form-item:not(:last-child) {
+        width: 100%;
+    }
+    
+    .search-wrap .search-form .form-item{
+        margin-top: 20px;
+    }
+    
+    .section-title h3 {
+        font-size: 2.8rem;
+    }
+    
+    .travel-main,
+    .travel-main.popular-place{
+        margin: 60px 0;
+        margin-top: 136px;
+    }
+    
+    .travel-variation {
+        padding: 50px 0 0;
+    }
+    
+    .footer-top .footer-widget,
+    .travel-variation .single-travel {
+        margin-bottom: 40px;
+    }
+    
+    .newsletter_field,
+    .travel-variation .single-travel h3 {
+        margin: 20px 0;
+    }
+    
+    .testimonial-area,
+    .newletter-area {
+        padding: 60px 0;
+    }
+    
+    .form-btn,
+    .newletter_btn {
+        text-align: end;
+    }
+    
+    .testimonial-area .testimonial-main {
+        width: 1200px;
+        margin-left: 45px;
+        overflow: hidden;
+    }
+    
+    #testimonial-radio1:checked ~ .testimonial-slide.first {
+        margin-left: 0;
+    }
+    
+    #testimonial-radio2:checked ~ .testimonial-slide.first {
+        margin-left: -300px;
+    }
+    
+    #testimonial-radio3:checked ~ .testimonial-slide.first  {
+        margin-left: -600px;
+    }
+    
+    #testimonial-radio4:checked ~ .testimonial-slide.first {
+        margin-left: -900px;
+    }
+    
+    .testimonial-info {
+        padding: 0 30px;
+    }
+    
+    .testimonial-slide {
+        width: 300px;
+    }
+    
+    .testimonial-info__content {
+        font-size: 1.4rem;
+    }
+    
+    .slider,
+    #main .bradcam,
+    .testimonial-nav__auto, .testimonial-nav__manual,
+    .header .navbar-list .navbar-list__item::before,
+    .header .navbar-list .navbar-list__item::after {
+        display: none;
+    }
+    
+    .single-trip {
+        margin-bottom: 40px;
+    }
+
+    .comments-area h4,
+    .tour-detail .tour-detail__title h3,
+    .tour-detail__content .tour-detail__content-title h3,
+    .blog-item .blog-item__img .blog-item__date h3,
+    .blog-item .blog-item__content .blog-item__content-title {
+        font-size: 1.6rem;
+    }
+    
+    .comment-box .user-comment textarea,
+    .comment-box .user-comment .user-action .user-btn
+    .blog-item .blog-item__content > p {
+        font-size: 1.4rem;
+    }
+    
+    .blog-item .blog-item__content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    
+    .blog__right-sidebar {
+        margin-top: 40px;
+    }
+    
+    .post-item .post-item__body h4 {
+        margin-top: 6px;
+    }
+    
+    .instagram-feed .instagram-list__item a {
+        width: 100%;
+    }
+    
+    .tour-detail,
+    .travel-main.about-story,
+    .travel-main.contact-section {
+        margin-top: 136px;
+    }
+    
+    .search-area {
+        margin-top: 80px;
+    }
+    
+    .contact-section form .form-group textarea,
+    .contact-section form .form-group input {
+        margin-bottom: 0;
+    }
+    
+    .contact-section .contact-info {
+        margin-top: 25px;
+    }
+    
+    .about-story .about-story__heading h3 {
+        margin-bottom: 20px;
+        font-size: 2.6rem;
+    }
+    
+    .header .navbar-list .navbar-list__item,
+    .about-story .about-story__thumb .part-left {
+        padding: 0;
+    }
+    
+    .tour-detail .tour-title h2 {
+        font-size: 1.6rem;
+        line-height: 20px;
+    }
+    
+    .carousel-item {
+        height: 250px;
+    }
+    
+    .tour-detail__content table tbody td span {
+        min-width: 100px;
+        display: inline-block;
+    }
+    
+    .comment-box .user-thumb {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .book-tour-wrap {
+        padding-top: 80px;
+    }
+    
+    .book-tour {
+        margin-top: 0;
+    }
+    
+    .space-second::before, .space-second::after {
+        width: 130px;
+    }
+
+}
+
+/*--------------------------------- low mobile ---------------------*/ 
+@media (max-width: 414px) {
+    .footer-top .footer-widget {
+        text-align: center;
+    }
+    
+    .footer-socials__list {
+        justify-content: center;
+    }
+    
+    .footer-widget .footer-logo img {
+        width: 100%;
+    }
+    
+    .footer-widget .footer-title {
+        margin-bottom: 30px;
+    }
+    
+    .testimonial-area .testimonial-main {
+        width: 1600px;
+        margin-left: 12px;
+        overflow: hidden;
+    }
+    
+    #testimonial-radio1:checked ~ .testimonial-slide.first {
+        margin-left: 0;
+    }
+    
+    #testimonial-radio2:checked ~ .testimonial-slide.first {
+        margin-left: -400px;
+    }
+    
+    #testimonial-radio3:checked ~ .testimonial-slide.first  {
+        margin-left: -800px;
+    }
+    
+    #testimonial-radio4:checked ~ .testimonial-slide.first {
+        margin-left: -1200px;
+    }
+    
+    .testimonial-info {
+        padding: 0 30px;
+    }
+    
+    .testimonial-slide {
+        width: 400px;
+    }
+    
+    .popular-place .popular-place__box-top {
+        flex-direction: column;
+    }
+    
+    ul.popular-place__list {
+        text-align: center;
+    }
+    
+    .popular-place .popular-place__box-top ul li:not(:last-child) {
+        padding: 8px 0;
+    }
+}
+
+/*--------------------------------- xlow mobile ---------------------*/ 
+@media (max-width: 375px) {    
+    .testimonial-area .testimonial-main {
+        width: 1496px;
+        margin-left: 0px;
+        overflow: hidden;
+    }
+    
+    #testimonial-radio1:checked ~ .testimonial-slide.first {
+        margin-left: 0;
+    }
+    
+    #testimonial-radio2:checked ~ .testimonial-slide.first {
+        margin-left: -374px;
+    }
+    
+    #testimonial-radio3:checked ~ .testimonial-slide.first  {
+        margin-left: -748px;
+    }
+    
+    #testimonial-radio4:checked ~ .testimonial-slide.first {
+        margin-left: -1122px;
+    }
+    
+    .testimonial-info {
+        padding: 0 40px;
+    }
+    
+    .testimonial-slide {
+        width: 374px;
+    }
+}
