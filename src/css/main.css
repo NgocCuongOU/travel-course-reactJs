@@ -496,7 +496,7 @@
 
 .slide img {
     width: 100%;
-    height: 650px;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -1268,6 +1268,9 @@
 }
 
 .footer-widget .footer-info__item a {
+    display: flex;
+    align-items: center;
+
     font-size: 1.6em;
     line-height: 30px;
     text-decoration: none;
@@ -1275,6 +1278,10 @@
     color: #AAB1B7;
 
     transition: 0.4s;
+}
+
+.footer-widget .footer-info__item a svg {
+    margin-right: 6px;
 }
 
 .footer-widget .footer-info__item a:hover {

@@ -8,6 +8,7 @@ import instagramImg6 from '../images/instagram/6.png'
 import { AiTwotoneHome } from 'react-icons/ai'
 import { BsFillTelephoneFill } from 'react-icons/bs'
 import { MdAttachEmail } from 'react-icons/md'
+import { BsFacebook, BsTwitter, BsInstagram, BsPinterest, BsYoutube } from 'react-icons/bs'
 
 
 function Footer() {
@@ -36,19 +37,19 @@ function Footer() {
                                 </ul>
                                 <ul class="footer-socials__list">
                                     <li class="footer-socials__item">
-                                        <a href=""><i class="fab fa-facebook-f"></i></a>
+                                        <a href=""><BsFacebook /></a>
                                     </li>
                                     <li class="footer-socials__item">
-                                        <a href=""><i class="fab fa-twitter"></i></a>
+                                        <a href=""><BsTwitter /></a>
                                     </li>
                                     <li class="footer-socials__item">
-                                        <a href=""><i class="fab fa-instagram"></i></a>
+                                        <a href=""><BsPinterest /></a>
                                     </li>
                                     <li class="footer-socials__item">
-                                        <a href=""><i class="fab fa-pinterest-p"></i></a>
+                                        <a href=""><BsInstagram  /></a>
                                     </li>
                                     <li class="footer-socials__item">
-                                        <a href=""><i class="fab fa-youtube"></i></a>
+                                        <a href=""><BsYoutube /></a>
                                     </li>
                                 </ul>
                             </div>
@@ -155,8 +156,7 @@ function Footer() {
                         <div class="col col-lg-12">
                             <div class="copy-right">
                                 <p>
-                                    Copyright ©
-                                    <script>document.write(new Date().getFullYear());</script>
+                                    Copyright © 2021 {document.write(new Date().getFullYear())}
                                     Đã đăng kí bản quyền | Mọi thông tin xin liên hệ về <strong>Travel CK</strong>.
                                 </p>
                             </div>

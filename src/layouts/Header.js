@@ -51,13 +51,13 @@ function Header() {
                                 <a href="">Vé máy bay</a>
                             </li>
                             <li class="navbar-list__item">
-                                <a href="./blog.html">Tin tức</a>
+                                <Link to="/blogs">Tin tức</Link>
                             </li>
                             <li class="navbar-list__item">
-                                <a href="./contact.html">Liên hệ</a>
+                                <Link to="/contact">Liên hệ</Link>
                             </li>
                             <li class="navbar-list__item">
-                                <a href="./about.html">Về chúng tôi</a>
+                                <Link to="/about">Về chúng tôi</Link>
                             </li>
                         </ul>
                     </div>

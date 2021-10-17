@@ -1,7 +1,10 @@
 import axios from "axios"
 export let endpoints = {
     "tours": "/tours/",
-    "tour-detail": (tourId) => `/tours/${tourId}`
+    "tour-detail": (tourId) => `/tours/${tourId}/`,
+    "tour-schedules": (tourId) => `/tours/${tourId}/schedules/`,
+    "tour-images": (tourId) => `/tours/${tourId}/images`,
+    "blogs": "/posts/"
 }
 
 export default axios.create({

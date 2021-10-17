@@ -2,17 +2,23 @@ import '../css/about.css'
 import '../css/contact.css'
 import '../css/blog-details.css'
 import '../css/tour-detail.css'
-import { BsFillInfoCircleFill, BsFillMapFill, BsInfoCircleFill, BsPaperclip,  } from 'react-icons/bs'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { BsFillInfoCircleFill, BsFillMapFill, BsPaperclip,  } from 'react-icons/bs'
 import { BiNote, BiCommentDetail } from 'react-icons/bi'
 import React, { useEffect, useState } from 'react'
 import Apis, { endpoints } from '../configs/Apis'
 import { useParams } from 'react-router'
 import { css } from '@emotion/react'
-import PulseLoader from 'react-spinners/PulseLoader'
 import InfoRightTourDetail from '../components/InfoRightTourDetail'
+import Schedule from '../components/Schedules'
+import { Markup } from 'interweave'
+import { Carousel } from 'react-bootstrap'
 
 function TourDetail() {
     const [tourDetail, setTourDetail] = useState([])
+    const [tourScheldules, setTourSchedules] = useState([])
+    const [tourImages, setTourImages] = useState([])
+
     let { tourId } = useParams()
     const override = css `
         display: block;
@@ -21,40 +27,42 @@ function TourDetail() {
         text-align: center;
     `
     
-    useEffect(() => {
-        const loadTourDetail = async () => {
-            try {
-                let res = await Apis.get(endpoints["tour-detail"](tourId))
-                console.log(res.data)
- 
-                setTourDetail(res.data)
-            } catch (error) {
-                console.log(error)
-            }
-        }
-
+    useEffect(() => {    
         loadTourDetail()
+        loadTourSchedules()
+        loadImages()
     }, [])
 
-    const handleText = () => {
-        let introduction = document.querySelector(".tour-detail__des")
-        let service = document.querySelector(".tour-detail__content-main.service")
-        let note = document.querySelector(".tour-detail__content-main.note")
+    const loadTourDetail = async () => {
+        try {
+            let res = await Apis.get(endpoints["tour-detail"](tourId))
 
-        if (tourDetail.introduction) {
-            introduction.innerHTML = tourDetail.introduction
-        }
-
-        if (tourDetail.service) {
-            service.innerHTML = tourDetail.service
-        }
-
-        if (tourDetail.note) {
-            note.innerHTML = tourDetail.note
+            setTourDetail(res.data)
+        } catch (error) {
+            console.log(error)
         }
     }
 
-    handleText()
+    const loadTourSchedules = async () => {
+        try {
+            let res = await Apis.get(endpoints["tour-schedules"](tourId))
+            
+            setTourSchedules(res.data)
+
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    const loadImages = async () => {
+        try {
+            let res = await Apis.get(endpoints["tour-images"](tourId))
+            setTourImages(res.data)
+            
+        } catch (error) {
+            console.error(error)
+        }
+    }
 
     return (
         <div id="main">
@@ -89,32 +97,19 @@ function TourDetail() {
                     <div class="col col-lg-8">
                         <div class="row">
                             <div class="col col-lg-12">
-                                <div id="carouselTourDetailIndicators" class="carousel slide" data-ride="carousel">
-                                    <ol class="carousel-indicators">
-                                    <li data-target="#carouselTourDetailIndicators" data-slide-to="0" class="active"></li>
-                                    <li data-target="#carouselTourDetailIndicators" data-slide-to="1"></li>
-                                    <li data-target="#carouselTourDetailIndicators" data-slide-to="2"></li>
-                                    </ol>
-                                    <div class="carousel-inner">
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100 h-100" src="./img/tour-detail/ban-cat-cat-du-lich-sapa-gia-re.jpg" alt="First slide" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100 h-100" src="./img/tour-detail/ban-cat-cat-tour-sapa-gia-re.jpg" alt="Second slide" />
-                                    </div>
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100 h-100" src="./img/tour-detail/cho-sapa-du-lich-mien-bac-gia-re.jpg" alt="Third slide" />
-                                    </div>
-                                    </div>
-                                    <a class="carousel-control-prev" href="#carouselTourDetailIndicators" role="button" data-slide="prev">
-                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="carousel-control-next" href="#carouselTourDetailIndicators" role="button" data-slide="next">
-                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                    <span class="sr-only">Next</span>
-                                    </a>
-                                </div>
+                                <Carousel>
+                                    { tourImages.map(image => {
+                                        return (
+                                            <Carousel.Item interval={3000}>
+                                                <img
+                                                className="d-block w-100"
+                                                src={image.image}
+                                                alt="First slide"
+                                                />
+                                            </Carousel.Item>
+                                        )
+                                    })}
+                                </Carousel>
                             </div>
                         </div>
                         <div class="row">
@@ -125,7 +120,7 @@ function TourDetail() {
                                 <div class="tour-detail__content">
                                     <InfoRightTourDetail tourDetail={tourDetail} />
                                     <div class="tour-detail__des">
-                                        <PulseLoader loading={true} css={override} size={15} />
+                                        <Markup content={tourDetail.introduction} />
                                     </div>
                                 </div>
                             </div>
@@ -133,46 +128,14 @@ function TourDetail() {
                                 <div class="tour-detail__title">
                                     <h3 id="journey-map"><i class="fas fa-map-marked mr-3"></i>Lịch trình</h3>
                                 </div>
-                                <div class="tour-detail__content">
-                                    <div class="tour-detail__content-title">
-                                        <h4>TP.HCM - Hà Nội - Hạ Long (Ăn trưa, chiều)</h4>
-                                    </div>
-                                    <div class="tour-detail__content-main">
-                                        <h4>Sáng:    Quý khách có mặt tại ga quốc nội, sân bay Tân Sơn Nhất trước giờ bay ít nhất ba tiếng.</h4>
-                                        <ul>
-                                            <li>Đại diện công ty Du Lịch Việt đón và hỗ trợ Quý Khách làm thủ tục đón chuyến bay đi Hà Nội.</li>
-                                            <li>Đến sân bay Nội Bài, Hướng Dẫn Viên đón đoàn, Khởi hành đến Hạ Long. Đến núi Yên Tử - ngọn núi cao 1068 m so với mực nước biển, một thắng cảnh thiên nhiên còn lưu giữ hệ thống các di tích lịch sử văn hóa gắn với sự ra đời, hình thành và phát triển của thiền phái Trúc Lâm Yên Tử, được mệnh danh là “đất tổ Phật giáo Việt Nam”.</li>
-                                        </ul>
-                                        <h4>Trưa: Dùng cơm trưa.</h4>
-                                        <ul>
-                                            <li>Quý khách lên núi bằng cáp treo (chi phí cáp treo tự túc), tham quan chùa Hoa Yên, Bảo Tháp, Trúc Lâm Tam Tổ, Hàng Tùng 700 tuổi…xuống núi tham quan Thiền Viện Trúc Lâm với quả cầu Như Ý nặng 6 tấn được xếp kỷ lục guiness Việt Nam.</li>
-                                            <li>Đoàn khởi hành đến Hạ Long.</li>
-                                        </ul>
-                                        <h4>Tối:  Dùng bữa tối. Nghỉ đêm tại Hạ Long.</h4>
-                                        <ul>
-                                            <li>Quý khách tự do dạo phố, mua sắm tại chợ đêm hoặc tham gia khu Sunworld Hạ Long Park với tất cả khu trò chơi trong nhà, ngoài trời hoành tráng có các khu Công viên Rồng, Cáp treo Nữ Hoàng vòng quay Sun wheel…(chi phí tự túc).</li>
-                                        </ul>
-                                    </div>
-                                    <div class="tour-detail__content-title">
-                                        <h4>HẠ LONG – NINH BÌNH (Ăn sáng, trưa, chiều)</h4>
-                                    </div>
-                                    <div class="tour-detail__content-main">
-                                        <h4>Sáng:    Quý khách có mặt tại ga quốc nội, sân bay Tân Sơn Nhất trước giờ bay ít nhất ba tiếng.</h4>
-                                        <ul>
-                                            <li>Đại diện công ty Du Lịch Việt đón và hỗ trợ Quý Khách làm thủ tục đón chuyến bay đi Hà Nội.</li>
-                                            <li>Đến sân bay Nội Bài, Hướng Dẫn Viên đón đoàn, Khởi hành đến Hạ Long. Đến núi Yên Tử - ngọn núi cao 1068 m so với mực nước biển, một thắng cảnh thiên nhiên còn lưu giữ hệ thống các di tích lịch sử văn hóa gắn với sự ra đời, hình thành và phát triển của thiền phái Trúc Lâm Yên Tử, được mệnh danh là “đất tổ Phật giáo Việt Nam”.</li>
-                                        </ul>
-                                        <h4>Trưa: Dùng cơm trưa.</h4>
-                                        <ul>
-                                            <li>Quý khách lên núi bằng cáp treo (chi phí cáp treo tự túc), tham quan chùa Hoa Yên, Bảo Tháp, Trúc Lâm Tam Tổ, Hàng Tùng 700 tuổi…xuống núi tham quan Thiền Viện Trúc Lâm với quả cầu Như Ý nặng 6 tấn được xếp kỷ lục guiness Việt Nam.</li>
-                                            <li>Đoàn khởi hành đến Hạ Long.</li>
-                                        </ul>
-                                        <h4>Tối:  Dùng bữa tối. Nghỉ đêm tại Hạ Long.</h4>
-                                        <ul>
-                                            <li>Quý khách tự do dạo phố, mua sắm tại chợ đêm hoặc tham gia khu Sunworld Hạ Long Park với tất cả khu trò chơi trong nhà, ngoài trời hoành tráng có các khu Công viên Rồng, Cáp treo Nữ Hoàng vòng quay Sun wheel…(chi phí tự túc).</li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                {
+                                    tourScheldules.map(schedule => {
+                                        return (
+                                            <Schedule schedule={schedule} />
+                                        )
+                                    })
+                                }
+                                
                             </div>
                             <div class="col col-lg-12">
                                 <div class="tour-detail__title">
@@ -180,7 +143,7 @@ function TourDetail() {
                                 </div>
                                 <div class="tour-detail__content">
                                     <div class="tour-detail__content-main service">
-                                        <PulseLoader loading={true} css={override} size={15} />
+                                        <Markup content={tourDetail.service} />
                                     </div>
                                 </div>
                             </div>
@@ -190,7 +153,7 @@ function TourDetail() {
                                 </div>
                                 <div class="tour-detail__content">
                                     <div class="tour-detail__content-main note">
-                                        <PulseLoader loading={true} css={override} size={15} />
+                                        <Markup content={tourDetail.note} />
                                     </div>
                                 </div>
                             </div>
