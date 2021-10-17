@@ -6,13 +6,13 @@ import { Link } from "react-router-dom";
 function Header() {
     return (
         <header id="header">
-            <div class="top-header">
-                <div class="container">
-                    <div class="row">
-                        <div class="col col-lg-12">
-                            <div class="number-contact">
+            <div className="top-header">
+                <div className="container">
+                    <div className="row">
+                        <div className="col col-lg-12">
+                            <div className="number-contact">
                                 <p>
-                                    <i class="fas fa-phone-alt"></i>
+                                    <i className="fas fa-phone-alt"></i>
                                     Hotline: <a href="tel:1900 0909 09"><strong>1900 0909 09</strong></a>
                                 </p>
                             </div>
@@ -20,84 +20,84 @@ function Header() {
                     </div>
                 </div>
             </div>
-            <div class="container">
-                <div class="row header">
-                    <div class="col col-md-2 col-lg-2">
-                        <div class="logo">
-                            <h1 class="logo__heading">
+            <div className="container">
+                <div className="row header">
+                    <div className="col col-md-2 col-lg-2">
+                        <div className="logo">
+                            <h1 className="logo__heading">
                                 <a href="#" >
                                     <img src={logo} alt="travel ck" />
                                 </a>
                             </h1>
                         </div>
                     </div>
-                    <div class="col col-md-6 col-lg-7">
-                        <ul class="navbar-list">
-                            <li class="navbar-list__item active">
+                    <div className="col col-md-6 col-lg-7">
+                        <ul className="navbar-list">
+                            <li className="navbar-list__item active">
                                 <Link to="/">Trang chủ</Link>
                             </li>
-                            <li class="navbar-list__item">
+                            <li className="navbar-list__item">
                                 <Link to="/tours">Du lịch <IoIosArrowDown /></Link>
-                                <ul class="sub-nav">
-                                    <li class="sub-nav__list">
+                                <ul className="sub-nav">
+                                    <li className="sub-nav__list">
                                         <Link to="/tours">Du lịch trong nước</Link>
                                     </li>
-                                    <li class="sub-nav__list">
+                                    <li className="sub-nav__list">
                                         <a href="./tour.html">Du lịch ngoài nước</a>
                                     </li>
                                 </ul>
                             </li>
-                            <li class="navbar-list__item">
+                            <li className="navbar-list__item">
                                 <a href="">Vé máy bay</a>
                             </li>
-                            <li class="navbar-list__item">
+                            <li className="navbar-list__item">
                                 <Link to="/blogs">Tin tức</Link>
                             </li>
-                            <li class="navbar-list__item">
+                            <li className="navbar-list__item">
                                 <Link to="/contact">Liên hệ</Link>
                             </li>
-                            <li class="navbar-list__item">
+                            <li className="navbar-list__item">
                                 <Link to="/about">Về chúng tôi</Link>
                             </li>
                         </ul>
                     </div>
-                    <div class="col col-md-4 col-lg-3">
-                        <div class="login">
-                            <div class="socials-wrap">
-                                <ul class="socials-list">
-                                    <li class="socials-list__item">
+                    <div className="col col-md-4 col-lg-3">
+                        <div className="login">
+                            <div className="socials-wrap">
+                                <ul className="socials-list">
+                                    <li className="socials-list__item">
                                         <a href=""><SiFacebook /></a>
                                     </li>
-                                    <li class="socials-list__item">
+                                    <li className="socials-list__item">
                                         <a href=""><SiInstagram /></a>
                                     </li>
                                 </ul>
                             </div>
-                            <div class="user-wrapper">
-                                <div class="wrap">
-                                    <span class="user-header">Tài khoản</span>
+                            <div className="user-wrapper">
+                                <div className="wrap">
+                                    <span className="user-header">Tài khoản</span>
                                     <IoIosArrowDown />
-                                    <ul class="user-dropdown">
-                                        <li class="btn-login-wrap">
-                                            <a href="./loginPage.html" class="btn-login">Đăng nhập</a>
+                                    <ul className="user-dropdown">
+                                        <li className="btn-login-wrap">
+                                            <a href="./loginPage.html" className="btn-login">Đăng nhập</a>
                                         </li>
-                                        <li class="register-text">
+                                        <li className="register-text">
                                             Chưa có tài khoản?
-                                            <a href="./registerPage.html" class="register-link"> Đăng ký </a>
+                                            <a href="./registerPage.html" className="register-link"> Đăng ký </a>
                                              ngay!
                                         </li>
                                     </ul>
                                 </div>
 
-                                {/* <div class="wrap">
-                                    <span class="user-header">Chào, admin</span>
-                                    <i class="fas fa-angle-down user-down"></i>
-                                    <ul class="user-dropdown">
-                                        <li class="register-text user-manage__text">
-                                            <a href="#" class="user-manage">Quản lý tài khoản</a>
+                                {/* <div className="wrap">
+                                    <span className="user-header">Chào, admin</span>
+                                    <i className="fas fa-angle-down user-down"></i>
+                                    <ul className="user-dropdown">
+                                        <li className="register-text user-manage__text">
+                                            <a href="#" className="user-manage">Quản lý tài khoản</a>
                                         </li>
-                                        <li class="btn-login-wrap">
-                                            <a href="./login.html" class="btn-login btn-logout">Đăng xuất</a>
+                                        <li className="btn-login-wrap">
+                                            <a href="./login.html" className="btn-login btn-logout">Đăng xuất</a>
                                         </li>
                                     </ul>
                                 </div> */}

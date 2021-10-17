@@ -195,8 +195,8 @@
     cursor: pointer;
 }
 
-.single-sidebar-widget .input-group-append button i {
-    font-size: 1.4rem;
+.single-sidebar-widget .input-group-append button svg {
+    font-size: 1.6rem;
     color: #999999;
 }
 

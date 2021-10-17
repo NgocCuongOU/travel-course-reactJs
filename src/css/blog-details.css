@@ -31,24 +31,24 @@
     line-height: 22px;
 }
 
-.blog-item .blog-item__reaction p span i {
-    padding: 8px;
+.blog-item .blog-item__reaction p span.like {
+    margin-right: 8px;
+}
+
+.blog-item .blog-item__reaction p span svg {
     cursor: pointer;
 }
 
-.blog-item .blog-item__reaction p span i:last-child {
-    display: none;
-}
-
-.blog-item__reaction .like-info.liked span i:last-child {
+.blog-item__reaction .like-info.liked span svg:last-child {
     display: inline-block;
 }
 
-.blog-item__reaction .like-info.liked span i:first-child {
+.blog-item .blog-item__reaction p span svg:last-child,
+.blog-item__reaction .like-info.liked span svg:first-child {
     display: none;
 }
 
-.blog-item .blog-item__reaction .like-info.liked span i {
+.blog-item .blog-item__reaction .like-info.liked span svg {
     color: var(--secondary-color);
 }
 
@@ -67,26 +67,9 @@
     line-height: 28px;
 }
 
-.blog-item__content-detail h2 {
-    padding-bottom: 10px;
-    margin: 25px 0;
-    /*border-bottom: 1px solid rgba(0,0,0,0.1);*/
-
-    font-size: 2.4rem;
-    line-height: 40px;
-}
-
-.blog-item__content-detail blockquote {
-    margin-bottom: 20px;
-    padding: 15px 20px;
-    border-radius: 4px;
-    border-left: 5px solid #d4d4d4;
-
-    background-color: #f1f1f1;
-}
-
-.blog-item__content-detail blockquote p {
-    margin: 0;
+.blog-item__content-detail img {
+    width: 100% !important;
+    object-fit: cover;
 }
 
 /* --------------- related blog -------------- */
@@ -125,7 +108,6 @@
 
 /* ------------- comment user --------------- */
 .comments-area {
-    padding: 45px 0;
     margin-bottom: 50px;
 
     background: transparent;

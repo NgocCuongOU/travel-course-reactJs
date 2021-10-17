@@ -1,46 +1,45 @@
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+import Apis, { endpoints } from '../configs/Apis'
+
 function CategoryWidget() {
+
+    const [categories, setCategories] = useState([])
+
+    useEffect(() => {
+        loadCategories()
+    }, [])
+
+
+    const loadCategories = async () => {
+        try {
+            let res = await Apis.get(endpoints['categories'])
+
+            setCategories(res.data)
+        } catch (error) {
+            console.error(error);
+        }
+    }
+
+
     return (
-        <aside class="single-sidebar-widget cate-widget">
-            <h4 class="widget-title">
+        <aside className="single-sidebar-widget cate-widget">
+            <h4 className="widget-title">
                 Danh mục
             </h4>
-            <ul class="cate-list">
-                <li class="cate-list__item">
-                    <a href="#">
-                        <p>Thực phẩm nhà hàng</p>
-                        <p>(3)</p>
-                    </a>
-                </li>
-                <li class="cate-list__item">
-                    <a href="#">
-                        <p>Tin tức du lịch</p>
-                        <p>(10)</p>
-                    </a>
-                </li>
-                <li class="cate-list__item">
-                    <a href="#">
-                        <p>Sản phẩm công nghệ</p>
-                        <p>(7)</p>
-                    </a>
-                </li>
-                <li class="cate-list__item">
-                    <a href="#">
-                        <p>Chăm sóc sức khỏe</p>
-                        <p>(50)</p>
-                    </a>
-                </li>
-                <li class="cate-list__item">
-                    <a href="#">
-                        <p>Chuyến tham quan thú vị</p>
-                        <p>(12)</p>
-                    </a>
-                </li>
-                <li class="cate-list__item">
-                    <a href="#">
-                        <p>Tình yêu du lịch</p>
-                        <p>(8)</p>
-                    </a>
-                </li>
+            <ul className="cate-list">
+                {
+                    categories.map(cate => {
+                        return (
+                            <li className="cate-list__item" key={cate.id}>
+                                <Link>
+                                    <p>{cate.name}</p>
+                                    <p>(3)</p>
+                                </Link>
+                            </li>
+                        )
+                    })
+                }
             </ul>
         </aside>
     )

@@ -5,20 +5,20 @@ import slideImg4 from '../images/banner4.png'
 
 function Slider() {
     return (
-        <div class="slider">
-            <div class="sliders">
+        <div className="slider">
+            <div className="sliders">
 
                 <input type="radio" name="radio-btn" id="radio1" />
                 <input type="radio" name="radio-btn" id="radio2" />
                 <input type="radio" name="radio-btn" id="radio3" />
                 <input type="radio" name="radio-btn" id="radio4" />
 
-                <div class="slide first">
+                <div className="slide first">
                     <img src={slideImg1} alt="" />
-                    <div class="container container-slide">
-                        <div class="row">
-                            <div class="col col-lg-12 slider-text-align">
-                                <div class="slider-text">
+                    <div className="container container-slide">
+                        <div className="row">
+                            <div className="col col-lg-12 slider-text-align">
+                                <div className="slider-text">
                                     <h3>Indonesia</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
@@ -26,12 +26,12 @@ function Slider() {
                         </div>
                     </div>
                 </div>
-                <div class="slide ">
-                    <img src={slideImg2}alt="" />
-                    <div class="container container-slide">
-                        <div class="row">
-                            <div class="col col-lg-12 slider-text-align">
-                                <div class="slider-text">
+                <div className="slide ">
+                    <img src={slideImg2} alt="" />
+                    <div className="container container-slide">
+                        <div className="row">
+                            <div className="col col-lg-12 slider-text-align">
+                                <div className="slider-text">
                                     <h3>Indonesia</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
@@ -39,12 +39,12 @@ function Slider() {
                         </div>
                     </div>
                 </div>
-                <div class="slide ">
+                <div className="slide ">
                     <img src={slideImg3} alt="" />
-                    <div class="container container-slide">
-                        <div class="row">
-                            <div class="col col-lg-12 slider-text-align">
-                                <div class="slider-text">
+                    <div className="container container-slide">
+                        <div className="row">
+                            <div className="col col-lg-12 slider-text-align">
+                                <div className="slider-text">
                                     <h3>Indonesia</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
@@ -52,12 +52,12 @@ function Slider() {
                         </div>
                     </div>
                 </div>
-                <div class="slide ">
+                <div className="slide ">
                     <img src={slideImg4} alt="" />
-                    <div class="container container-slide">
-                        <div class="row">
-                            <div class="col col-lg-12 slider-text-align">
-                                <div class="slider-text">
+                    <div className="container container-slide">
+                        <div className="row">
+                            <div className="col col-lg-12 slider-text-align">
+                                <div className="slider-text">
                                     <h3>Indonesia</h3>
                                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
                                 </div>
@@ -65,19 +65,19 @@ function Slider() {
                         </div>
                     </div>
                 </div>
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
+                <div className="navigation-auto">
+                    <div className="auto-btn1"></div>
+                    <div className="auto-btn2"></div>
+                    <div className="auto-btn3"></div>
+                    <div className="auto-btn4"></div>
                 </div>
             </div>
 
-            <div class="manual-navigation">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
+            <div className="manual-navigation">
+                <label htmlFor="radio1" className="manual-btn"></label>
+                <label htmlFor="radio2" className="manual-btn"></label>
+                <label htmlFor="radio3" className="manual-btn"></label>
+                <label htmlFor="radio4" className="manual-btn"></label>
             </div>
         </div>
     )

@@ -8,11 +8,12 @@ import { BiNote, BiCommentDetail } from 'react-icons/bi'
 import React, { useEffect, useState } from 'react'
 import Apis, { endpoints } from '../configs/Apis'
 import { useParams } from 'react-router'
-import { css } from '@emotion/react'
 import InfoRightTourDetail from '../components/InfoRightTourDetail'
 import Schedule from '../components/Schedules'
 import { Markup } from 'interweave'
 import { Carousel } from 'react-bootstrap'
+import Comment from '../components/Comment'
+import CommentBox from '../components/CommentBox'
 
 function TourDetail() {
     const [tourDetail, setTourDetail] = useState([])
@@ -20,12 +21,6 @@ function TourDetail() {
     const [tourImages, setTourImages] = useState([])
 
     let { tourId } = useParams()
-    const override = css `
-        display: block;
-        margin: 0 auto;
-        border-color: blue;
-        text-align: center;
-    `
     
     useEffect(() => {    
         loadTourDetail()
@@ -66,37 +61,37 @@ function TourDetail() {
 
     return (
         <div id="main">
-            <div class="container tour-detail">
-                <div class="row">
-                    <div class="col col-lg-12">
-                        <div class="tour-title">
+            <div className="container tour-detail">
+                <div className="row">
+                    <div className="col col-lg-12">
+                        <div className="tour-title">
                             <h2>{tourDetail.name}</h2>
                         </div>
                     </div>
-                    <div class="col col-lg-12">
-                        <div class="tour-rating">
-                            <ul class="rating">
-                                <li><a href="#"><i class="far fa-star"></i></a></li>
-                                <li><a href="#"><i class="far fa-star"></i></a></li>
-                                <li><a href="#"><i class="far fa-star"></i></a></li>
-                                <li><a href="#"><i class="far fa-star"></i></a></li>
-                                <li><a href="#"><i class="far fa-star"></i></a></li>
+                    <div className="col col-lg-12">
+                        <div className="tour-rating">
+                            <ul className="rating">
+                                <li><a href="#"><i className="far fa-star"></i></a></li>
+                                <li><a href="#"><i className="far fa-star"></i></a></li>
+                                <li><a href="#"><i className="far fa-star"></i></a></li>
+                                <li><a href="#"><i className="far fa-star"></i></a></li>
+                                <li><a href="#"><i className="far fa-star"></i></a></li>
                             </ul>
-                            <div class="rating-info">
-                                <span class="num-first">4.75</span>
+                            <div className="rating-info">
+                                <span className="num-first">4.75</span>
                                 <span>/</span>
-                                <span class="num-last">5</span>
+                                <span className="num-last">5</span>
                                 trong
-                                <span class="num-sum"><strong>210</strong></span>
+                                <span className="num-sum"><strong>210</strong></span>
                                 đánh giá
                             </div>
                         </div>  
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col col-lg-8">
-                        <div class="row">
-                            <div class="col col-lg-12">
+                <div className="row">
+                    <div className="col col-lg-8">
+                        <div className="row">
+                            <div className="col col-lg-12">
                                 <Carousel>
                                     { tourImages.map(image => {
                                         return (
@@ -112,21 +107,21 @@ function TourDetail() {
                                 </Carousel>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col col-lg-12">
-                                <div class="tour-detail__title">
-                                    <h3 id="journey"><i class="fas fa-info-circle mr-3"></i>Điểm nhấn hành trình</h3>
+                        <div className="row">
+                            <div className="col col-lg-12">
+                                <div className="tour-detail__title">
+                                    <h3 id="journey"><i className="fas fa-info-circle mr-3"></i>Điểm nhấn hành trình</h3>
                                 </div>
-                                <div class="tour-detail__content">
+                                <div className="tour-detail__content">
                                     <InfoRightTourDetail tourDetail={tourDetail} />
-                                    <div class="tour-detail__des">
+                                    <div className="tour-detail__des">
                                         <Markup content={tourDetail.introduction} />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-lg-12">
-                                <div class="tour-detail__title">
-                                    <h3 id="journey-map"><i class="fas fa-map-marked mr-3"></i>Lịch trình</h3>
+                            <div className="col col-lg-12">
+                                <div className="tour-detail__title">
+                                    <h3 id="journey-map"><i className="fas fa-map-marked mr-3"></i>Lịch trình</h3>
                                 </div>
                                 {
                                     tourScheldules.map(schedule => {
@@ -137,155 +132,89 @@ function TourDetail() {
                                 }
                                 
                             </div>
-                            <div class="col col-lg-12">
-                                <div class="tour-detail__title">
-                                    <h3 id="services"><i class="fas fa-paperclip mr-3"></i>Dịch vụ bao gồm và không bao gồm</h3>
+                            <div className="col col-lg-12">
+                                <div className="tour-detail__title">
+                                    <h3 id="services"><i className="fas fa-paperclip mr-3"></i>Dịch vụ bao gồm và không bao gồm</h3>
                                 </div>
-                                <div class="tour-detail__content">
-                                    <div class="tour-detail__content-main service">
+                                <div className="tour-detail__content">
+                                    <div className="tour-detail__content-main service">
                                         <Markup content={tourDetail.service} />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-lg-12">
-                                <div class="tour-detail__title">
-                                    <h3 id="note"><i class="far fa-sticky-note mr-3"></i>Ghi chú</h3>
+                            <div className="col col-lg-12">
+                                <div className="tour-detail__title">
+                                    <h3 id="note"><i className="far fa-sticky-note mr-3"></i>Ghi chú</h3>
                                 </div>
-                                <div class="tour-detail__content">
-                                    <div class="tour-detail__content-main note">
+                                <div className="tour-detail__content">
+                                    <div className="tour-detail__content-main note">
                                         <Markup content={tourDetail.note} />
                                     </div>
                                 </div>
                             </div>
-                            <div class="col col-lg-12">
-                                <div class="tour-detail__gb">
-                                    <p class="text-center fs-5"><strong>KÍNH CHÚC QUÝ KHÁCH CHUYẾN ĐI THÚ VỊ VÀ BỔ ÍCH !</strong></p>
+                            <div className="col col-lg-12">
+                                <div className="tour-detail__gb">
+                                    <p className="text-center fs-5"><strong>KÍNH CHÚC QUÝ KHÁCH CHUYẾN ĐI THÚ VỊ VÀ BỔ ÍCH !</strong></p>
                                 </div>
                             </div>
-                            <div class="col col-lg-12">
-                                <div class="tour-detail__title">
-                                    <h3 id="comment"><i class="far fa-comments mr-3"></i>Bình luận</h3>
+                            <div className="col col-lg-12">
+                                <div className="tour-detail__title">
+                                    <h3 id="comment"><i className="far fa-comments mr-3"></i>Bình luận</h3>
                                 </div>
-                                <div class="tour-detail__content">
-                                    <div class="comments-area">
+                                <div className="tour-detail__content">
+                                    <div className="comments-area">
                                         <h4>05 bình luận</h4>
-                                        <div class="comments-list">
-                                            <div class="single-comment">
-                                                <div class="single-comment__thumb">
-                                                    <img src="././img/user/comment_1.png" alt="user-1" />
-                                                </div>
-                                                <div class="single-comment__des">
-                                                    <p class="single-comment__content">Cho em hỏi mấy anh chị đã ra trường ở OU hiện đã làm công việc gì vậy ạ. Anh chị có xin việc dễ dàng ko. Vì em thấy có nhìu doanh nghiệp ưu tiên bằng ĐH của những trường top.</p>
-                                                    <div class="comment-user">
-                                                        <h5><a href="#">Cao Ngọc Cường</a></h5>
-                                                        <p class="date">01 Tháng 03 2021</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-comment">
-                                                <div class="single-comment__thumb">
-                                                    <img src="././img/user/comment_2.png" alt="user-1" />
-                                                </div>
-                                                <div class="single-comment__des">
-                                                    <p class="single-comment__content">Một bài viết thực sự củm động :((</p>
-                                                    <div class="comment-user">
-                                                        <h5><a href="#">Trần Vũ Khang</a></h5>
-                                                        <p class="date">02 Tháng 03 2021</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-comment">
-                                                <div class="single-comment__thumb">
-                                                    <img src="././img/user/comment_3.png" alt="user-1" />
-                                                </div>
-                                                <div class="single-comment__des">
-                                                    <p class="single-comment__content">học trường nào cũng được, quan trọng là giá trị bản thân có được đánh bóng bởi chính mình hay là không, mới quan trọng. Ví dụ như mấy cuộc thi của L'Oreal, hay Nestlé đâu có cần xem bằng cấp gì, quan trọng là năng lực bản thân mình thể hiện thôi. Nên nếu các bạn đã tin tưởng chọn Ou làm nơi để các bạn trau dồi thì chắc chắn một điều là các bạn đã không có điểm số cao để vào các trường Top lớn. Vì thế, việc bây giờ là các bạn phải cố gắng trau dồi hết mức có thể để bản thân mình có đủ skill, đừng tự ti vì mình học trường thấp hơn mà hãy suy nghĩ rằng mình sẽ giỏi như họ vào một thời điểm trong tương lai, đến lúc đó vững vàng mà chọn doanh nghiệp lớn để vào. dè deeee~</p>
-                                                    <div class="comment-user">
-                                                        <h5><a href="#">Cao Ngọc Cường</a></h5>
-                                                        <p class="date">01 Tháng 03 2021</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-comment">
-                                                <div class="single-comment__thumb">
-                                                    <img src="././img/user/comment_1.png" alt="user-1" />
-                                                </div>
-                                                <div class="single-comment__des">
-                                                    <p class="single-comment__content">Bài viết rất xuất sắc</p>
-                                                    <div class="comment-user">
-                                                        <h5><a href="#">Cao Ngọc Cường</a></h5>
-                                                        <p class="date">01 Tháng 03 2021</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="single-comment">
-                                                <div class="single-comment__thumb">
-                                                    <img src="././img/user/comment_3.png" alt="user-1" />
-                                                </div>
-                                                <div class="single-comment__des">
-                                                    <p class="single-comment__content">Bài viết rất xuất sắc</p>
-                                                    <div class="comment-user">
-                                                        <h5><a href="#">Cao Ngọc Cường</a></h5>
-                                                        <p class="date">01 Tháng 03 2021</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div className="comments-list">
+                                            <Comment />
+                                            <Comment />
+                                            <Comment />
+                                            <Comment />
+                                            <Comment />
                                         </div>
                                     </div>
-                                    <div class="comment-box">
-                                        <div class="user-thumb">
-                                            <img src="./img/avtar/avtar.jpg" alt="user" />
-                                        </div>
-                                        <div class="user-comment">
-                                            <textarea name="" id="" cols="5" rows="2" placeholder="Viết bình luận của bạn..."></textarea>
-                                            <div class="user-action">
-                                                <button class="user-btn back">Hủy</button>
-                                                <button class="user-btn submit">Bình luận</button>
-                                            </div>
-                                        </div>
-                                    </div> 
+                                    <CommentBox />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col col-lg-4">
-                        <div class="box-right">
-                            <div class="tour-box-info">
-                                <div class="tour-name">{tourDetail.name}</div>
-                                <div class="tour-box-detail">
+                    <div className="col col-lg-4">
+                        <div className="box-right">
+                            <div className="tour-box-info">
+                                <div className="tour-name">{tourDetail.name}</div>
+                                <div className="tour-box-detail">
                                     <ul>
                                         <li>
-                                            <span class="tour-key">Mã chuyến đi:</span>
-                                            <span class="tour-value">{tourDetail.id}</span>
+                                            <span className="tour-key">Mã chuyến đi:</span>
+                                            <span className="tour-value">{tourDetail.id}</span>
                                         </li>
                                         <li>
-                                            <span class="tour-key">Thời gian:</span>
-                                            <span class="tour-value">{`${tourDetail.tour_days} ngày ${tourDetail.tour_nights} đêm`}</span>
+                                            <span className="tour-key">Thời gian:</span>
+                                            <span className="tour-value">{`${tourDetail.tour_days} ngày ${tourDetail.tour_nights} đêm`}</span>
                                         </li>
                                         <li>
-                                            <span class="tour-key">Ngày khởi hành:</span>
-                                            <span class="tour-value">{tourDetail.start_date}</span>
+                                            <span className="tour-key">Ngày khởi hành:</span>
+                                            <span className="tour-value">{tourDetail.start_date}</span>
                                         </li>
                                         <li>
-                                            <span class="tour-key">Ngày kết thúc:</span>
-                                            <span class="tour-value">{tourDetail.end_date}</span>
+                                            <span className="tour-key">Ngày kết thúc:</span>
+                                            <span className="tour-value">{tourDetail.end_date}</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="tour-box-fix">
-                                <div class="tour-box-price">
-                                    <span class="tour-box-price__text">Giá từ: </span>
-                                    <span class="tour-box-price__num">{tourDetail.children_price}</span>
-                                    <span class="tour-box-price__nor"> 1.999.999đ</span>
+                            <div className="tour-box-fix">
+                                <div className="tour-box-price">
+                                    <span className="tour-box-price__text">Giá từ: </span>
+                                    <span className="tour-box-price__num">{tourDetail.children_price}</span>
+                                    <span className="tour-box-price__nor"> 1.999.999đ</span>
                                 </div>
-                                <div class="tour-box-btn text-center">
-                                    <a href="./bookingTour.html" class="btn btn-tdetail">Đặt vé</a>
+                                <div className="tour-box-btn text-center">
+                                    <a href="./bookingTour.html" className="btn btn-tdetail">Đặt vé</a>
                                 </div>
                             </div>
-                            <div class="tour-box-index">
+                            <div className="tour-box-index">
                                 <ul>
-                                    <li class="active">
+                                    <li className="active">
                                         <a href="#journey">
                                             <span><BsFillInfoCircleFill /></span>
                                             Điểm nhấn hành trình

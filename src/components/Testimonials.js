@@ -2,71 +2,71 @@ import authorImg from '../images/author/author1.png'
 
 function Testimonials() {
     return (
-        <section class="testimonial-area">
-            <div class="container">
-                <div class="row align-item">
-                    <div class="testimonial-col">
-                        <div class="testimonial-main">
+        <section className="testimonial-area">
+            <div className="container">
+                <div className="row align-item">
+                    <div className="testimonial-col">
+                        <div className="testimonial-main">
 
                             <input type="radio" name="testimonial" id="testimonial-radio1" />
                             <input type="radio" name="testimonial" id="testimonial-radio2" />
                             <input type="radio" name="testimonial" id="testimonial-radio3" />
                             <input type="radio" name="testimonial" id="testimonial-radio4" />
 
-                            <div class="testimonial-slide first">
-                                <div class="testimonial-thumb">
+                            <div className="testimonial-slide first">
+                                <div className="testimonial-thumb">
                                     <img src={authorImg} alt="author1" />
-                                    <span><i class="far fa-comment-dots"></i></span>
+                                    <span><i className="far fa-comment-dots"></i></span>
                                 </div>
-                                <div class="testimonial-info">
-                                    <p class="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <h3 class="testimonial-info__author">Tom mouse</h3>
+                                <div className="testimonial-info">
+                                    <p className="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                    <h3 className="testimonial-info__author">Tom mouse</h3>
                                 </div>
                             </div>
-                            <div class="testimonial-slide">
-                                <div class="testimonial-thumb">
+                            <div className="testimonial-slide">
+                                <div className="testimonial-thumb">
                                     <img src={authorImg} alt="author1" />
-                                    <span><i class="far fa-comment-dots"></i></span>
+                                    <span><i className="far fa-comment-dots"></i></span>
                                 </div>
-                                <div class="testimonial-info">
-                                    <p class="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <h3 class="testimonial-info__author">Tom mouse</h3>
+                                <div className="testimonial-info">
+                                    <p className="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                    <h3 className="testimonial-info__author">Tom mouse</h3>
                                 </div>
                             </div>
-                            <div class="testimonial-slide">
-                                <div class="testimonial-thumb">
+                            <div className="testimonial-slide">
+                                <div className="testimonial-thumb">
                                     <img src={authorImg} alt="author1" />
-                                    <span><i class="far fa-comment-dots"></i></span>
+                                    <span><i className="far fa-comment-dots"></i></span>
                                 </div>
-                                <div class="testimonial-info">
-                                    <p class="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <h3 class="testimonial-info__author">Tom mouse</h3>
+                                <div className="testimonial-info">
+                                    <p className="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                    <h3 className="testimonial-info__author">Tom mouse</h3>
                                 </div>
                             </div>
-                            <div class="testimonial-slide">
-                                <div class="testimonial-thumb">
+                            <div className="testimonial-slide">
+                                <div className="testimonial-thumb">
                                     <img src={authorImg} alt="author1" />
-                                    <span><i class="far fa-comment-dots"></i></span>
+                                    <span><i className="far fa-comment-dots"></i></span>
                                 </div>
-                                <div class="testimonial-info">
-                                    <p class="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
-                                    <h3 class="testimonial-info__author">Tom mouse</h3>
+                                <div className="testimonial-info">
+                                    <p className="testimonial-info__content">Working in conjunction with humanitarian aid agencies, we have supported programmes to help alleviate human suffering.</p>
+                                    <h3 className="testimonial-info__author">Tom mouse</h3>
                                 </div>
                             </div>
-                            <div class="testimonial-nav__auto">
-                                <div class="testimonial-auto1"></div>
-                                <div class="testimonial-auto2"></div>
-                                <div class="testimonial-auto3"></div>
-                                <div class="testimonial-auto4"></div>
+                            <div className="testimonial-nav__auto">
+                                <div className="testimonial-auto1"></div>
+                                <div className="testimonial-auto2"></div>
+                                <div className="testimonial-auto3"></div>
+                                <div className="testimonial-auto4"></div>
                             </div>
                             
                         </div>
 
-                        <div class="testimonial-nav__manual">
-                            <label for="testimonial-radio1" class="testimonial-btn"></label>
-                            <label for="testimonial-radio2" class="testimonial-btn"></label>
-                            <label for="testimonial-radio3" class="testimonial-btn"></label>
-                            <label for="testimonial-radio4" class="testimonial-btn"></label>
+                        <div className="testimonial-nav__manual">
+                            <label htmlFor="testimonial-radio1" className="testimonial-btn"></label>
+                            <label htmlFor="testimonial-radio2" className="testimonial-btn"></label>
+                            <label htmlFor="testimonial-radio3" className="testimonial-btn"></label>
+                            <label htmlFor="testimonial-radio4" className="testimonial-btn"></label>
                         </div>
                     </div>
                 </div>

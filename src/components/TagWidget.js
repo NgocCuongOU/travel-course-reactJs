@@ -1,34 +1,42 @@
+import { useEffect, useState } from "react"
+import { Link } from "react-router-dom"
+import Apis, { endpoints } from "../configs/Apis"
+
 function TagWidget() {
+
+    const [tags, setTags] = useState([])
+
+    useEffect(() => {
+        loadTags()
+    }, [])
+
+    const loadTags = async () => {
+        try {
+            const res = await Apis.get(endpoints['tags'])
+
+            setTags(res.data)
+        } catch(error) {
+            console.error(error)
+        }
+    } 
+
+
+
     return (
-        <aside class="single-sidebar-widget tag">
-            <h4 class="widget-title">
+        <aside className="single-sidebar-widget tag">
+            <h4 className="widget-title">
                 Tag
             </h4>
-            <ul class="tag-list">
-                <li class="tag-list_item">
-                    <a href="#">love</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">travel</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">skincare</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">life style</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">technology</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">healthy</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">food</a>
-                </li>
-                <li class="tag-list_item">
-                    <a href="#">picture</a>
-                </li>
+            <ul className="tag-list">
+                {
+                    tags.map(tag => {
+                        return (
+                            <li className="tag-list_item" key={tag.id}>
+                                <Link>{tag.name}</Link>
+                            </li>
+                        )
+                    })
+                }
             </ul>
         </aside>
     )

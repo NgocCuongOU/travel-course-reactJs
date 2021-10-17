@@ -1,17 +1,19 @@
+import { AiOutlineSearch } from 'react-icons/ai'
+
 function SearchWidget() {
     return (
-        <aside class="single-sidebar-widget search-widget">
+        <aside className="single-sidebar-widget search-widget">
             <form action="">
-                <div class="form-group">
+                <div className="form-group">
                     <input required="" type="text" name="" id="" placeholder="Nhập từ khóa..." />
-                    <div class="input-group-append">
-                        <button class="input-btn">
-                            <i class="fas fa-search"></i>
+                    <div className="input-group-append">
+                        <button className="input-btn">
+                            <AiOutlineSearch />
                         </button>
                     </div>
                 </div>
-                <div class="form-btn">
-                    <button class="btn-sidebar">Tìm kiếm</button>
+                <div className="form-btn">
+                    <button className="btn-sidebar">Tìm kiếm</button>
                 </div>
             </form>
         </aside>

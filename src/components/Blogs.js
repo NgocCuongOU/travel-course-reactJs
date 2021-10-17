@@ -1,5 +1,5 @@
 import tripImg from '../images/trips/trip-1.png'
-
+import { Link } from 'react-router-dom'
 
 function Blogs() {
     return (
@@ -22,9 +22,9 @@ function Blogs() {
                                 <div className="single-trip__date">
                                     <span>Oct 12, 2019</span>
                                 </div>
-                                <a href="">
+                                <Link>
                                     <h3>Journeys Are Best Measured In New Friends</h3>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -37,9 +37,9 @@ function Blogs() {
                                 <div className="single-trip__date">
                                     <span>Oct 12, 2019</span>
                                 </div>
-                                <a href="">
+                                <Link>
                                     <h3>Journeys Are Best Measured In New Friends</h3>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -52,9 +52,9 @@ function Blogs() {
                                 <div className="single-trip__date">
                                     <span>Oct 12, 2019</span>
                                 </div>
-                                <a href="">
+                                <Link>
                                     <h3>Journeys Are Best Measured In New Friends</h3>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>

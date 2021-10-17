@@ -1,5 +1,6 @@
 import {BrowserRouter, Switch, Route} from "react-router-dom"
 import About from "../pages/About"
+import BlogDetail from "../pages/BlogDetail"
 import Blogspage from "../pages/BlogsPage"
 import Contact from "../pages/Contact"
 import Home from "../pages/Home"
@@ -22,6 +23,7 @@ function Body() {
                 <Route exact path="/contact" component={Contact} />
                 <Route exact path="/about" component={About} />
                 <Route exact path="/blogs" component={Blogspage} />
+                <Route exacth path="/blogs/:blogId" component={BlogDetail} />
             </Switch>
 
             <Footer />

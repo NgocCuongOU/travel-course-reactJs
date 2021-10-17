@@ -3,12 +3,12 @@ import CardTour from "../components/CardTour"
 import SearchTour from "../components/SearchTour"
 import Slider from "../components/Slider"
 import Apis, { endpoints } from "../configs/Apis"
-import { GrFormPrevious, GrFormNext } from 'react-icons/gr'
 import { BsArrowDown, BsArrowUp} from 'react-icons/bs'
 import '../css/tour.css'
 import { useLocation } from "react-router"
 import News from "../components/News"
 import Blogs from "../components/Blogs"
+import Pagination from "../components/Pagination"
 
 
 function Tours() {
@@ -51,26 +51,26 @@ function Tours() {
         <>
             <Slider />
             <SearchTour />
-            <section class="travel-main popular-place">
-                <div class="container">
-                    <div class="row align-item">
-                        <div class="col col-lg-12">
-                            <div class="popular-place__box-top">
+            <section className="travel-main popular-place">
+                <div className="container">
+                    <div className="row align-item">
+                        <div className="col col-lg-12">
+                            <div className="popular-place__box-top">
                                 <span>Sắp xếp:</span>
-                                <ul class="popular-place__list">
-                                    <li class="popular-place__item hide">Ngày khởi hành 
+                                <ul className="popular-place__list">
+                                    <li className="popular-place__item hide">Ngày khởi hành 
                                         <BsArrowUp />
                                         <BsArrowDown />
                                     </li>
-                                    <li class="popular-place__item">Theo giá 
+                                    <li className="popular-place__item">Theo giá 
                                         <BsArrowUp />
                                         <BsArrowDown />
                                     </li>
-                                    <li class="popular-place__item">Theo thời gian 
+                                    <li className="popular-place__item">Theo thời gian 
                                         <BsArrowUp />
                                         <BsArrowDown />
                                     </li>
-                                    <li class="popular-place__item">Theo sao 
+                                    <li className="popular-place__item">Theo sao 
                                         <BsArrowUp />
                                         <BsArrowDown />
                                     </li>
@@ -78,7 +78,7 @@ function Tours() {
                             </div>
                         </div>
                     </div>
-                    <div class="row">
+                    <div className="row">
                         {
                             tours.map((tour) => {
                                 return (
@@ -87,22 +87,15 @@ function Tours() {
                             })
                         }
                     </div>
-                    <div class="row">
-                        <div class="col col-lg-12">
-                            <div class="popular-place-pagi">
-                                <ul>
-                                    <li class="arrow" onClick={() => handlePage(-1)}>
-                                        <button disabled={!prev}><GrFormPrevious /></button>
-                                    </li>
-                                    <li class="num active">1</li>
-                                    <li class="num">2</li>
-                                    <li class="num">3</li>
-                                    <li class="num">...</li>
-                                    <li class="num">10</li>
-                                    <li class="arrow" onClick={() => handlePage(1)}>
-                                        <button disabled={!next}><GrFormNext /></button>
-                                    </li>
-                                </ul>
+                    <div className="row">
+                        <div className="col col-lg-12">
+                            <div className="popular-place-pagi">
+                                <Pagination 
+                                    pre={!prev} 
+                                    next={!next} 
+                                    handlePagePrev={() => handlePage(-1)} 
+                                    handlePageNext={() => handlePage(1)}
+                                />
                             </div>
                         </div>
                     </div>
