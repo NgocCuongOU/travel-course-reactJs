@@ -52,9 +52,10 @@
     color: #333333;
 }
 
-.book-tour__list li a i {
+.book-tour__list li a svg {
     color: var(--secondary-color);
-    padding-right: 8px;
+    margin-right: 8px;
+    margin-bottom: 3px;
 }
 
 .book-tour__img img {

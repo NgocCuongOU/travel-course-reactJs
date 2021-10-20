@@ -1,7 +1,6 @@
 import '../css/main.css'
 import '../css/bookTour.css'
 import '../css/login.css'
-import bookTourImg from '../images/booktour-bg.jpg'
 import googleIcon from '../images/google-icon.png'
 import { AiFillFacebook } from 'react-icons/ai'
 import { useState } from 'react'
@@ -10,6 +9,7 @@ import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router'
 import { loginUser } from '../ActionCreator/userCreator'
 import cookies from 'react-cookies'
+import FormLoginLeft from '../components/FormLoginLeft'
 
 function Login() {
 
@@ -61,25 +61,7 @@ function Login() {
                 <div className="container book-tour">
                     <div className="row">
                         <div className="col col-sm-12 col-lg-5">
-                            <div className="book-tour__contact">
-                                <div className="book-tour__title">
-                                    <h3>Cùng trải nghiệm với chúng tôi trong những hành trình tuyệt vời nhất ❤️</h3>
-                                </div>
-                                <div className="book-tour__type">
-                                    <h2>Đăng nhập</h2>
-                                </div>
-                                <ul className="book-tour__list">
-                                    <li>
-                                        <a href="mailto:ngoccuong01032000@gmail.com"><i className="fas fa-envelope"></i>ngoccuong01032000@gmail.com</a>
-                                    </li>
-                                    <li>
-                                        <a href="tel:+84337152172"><i className="fas fa-phone-square-alt"></i>0337152172</a>
-                                    </li>
-                                </ul>
-                                <div className="book-tour__img">
-                                    <img src={bookTourImg} alt="book-tour" />
-                                </div>
-                            </div>
+                            <FormLoginLeft />
                         </div>
                         <div className="col col-sm-12 col-lg-7">
                             <div className="book-tour__content auth__content">

@@ -10,7 +10,8 @@ export let endpoints = {
     "tags": "/tags/",
     "oauth2-info": "/oauth2-info/",
     "login": "/o/token/",
-    "current-user": "/users/current-user/"
+    "current-user": "/users/current-user/",
+    "register": "/users/"
 }
 
 export default axios.create({

@@ -30,8 +30,8 @@ function Header() {
                 </li>
                 <li className="register-text">
                     Chưa có tài khoản?
-                    <a href="./registerPage.html" className="register-link"> Đăng ký </a>
-                        ngay!
+                    <Link to="/register" className="register-link"> Đăng ký </Link>
+                    ngay!
                 </li>
             </ul>
         </div>

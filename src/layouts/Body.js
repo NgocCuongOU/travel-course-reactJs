@@ -5,6 +5,7 @@ import Blogspage from "../pages/BlogsPage"
 import Contact from "../pages/Contact"
 import Home from "../pages/Home"
 import Login from "../pages/Login"
+import Register from "../pages/Register"
 import TourDetail from "../pages/TourDetail"
 import Tours from "../pages/Tours"
 
@@ -26,6 +27,7 @@ function Body() {
                 <Route exact path="/blogs" component={Blogspage} />
                 <Route exact path="/blogs/:blogId" component={BlogDetail} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/register" component={Register} />
             </Switch>
 
             <Footer />
