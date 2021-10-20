@@ -96,15 +96,13 @@ p {
 
 .login-with-another .google-thumb {
     margin-right: 10px;
-    height: 30px;
-    width: 30px;
 }
 
 .login-with-another .google-thumb a {
     display: inline-block;
 }
 
-.login-with-another .google-thumb a i {
+.login-with-another .google-thumb a svg {
     font-size: 2.6rem;
     color: #4C6EF5;
 }
@@ -164,11 +162,11 @@ p {
 
 .form-control {
     height: 40px;
-    padding: 8px 12px;
-    border: 1px solid #b3b3b3;
-    border-radius: 3px;
+    padding: 8px 12px  !important;
+    border: 1px solid #b3b3b3 !important;
+    border-radius: 3px !important;
     outline: none;
-    font-size: 1.4rem;
+    font-size: 1.4rem !important;
 }
 
 .form-control:hover {

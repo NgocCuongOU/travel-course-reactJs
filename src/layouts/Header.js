@@ -2,8 +2,58 @@ import logo from "../images/logo.png"
 import { IoIosArrowDown } from "react-icons/io";
 import { SiFacebook, SiInstagram } from 'react-icons/si'
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import cookies from 'react-cookies'
+import { logoutUser } from "../ActionCreator/userCreator";
 
 function Header() {
+
+    const user = useSelector(state => state.user.user)
+    const dispatch = useDispatch()
+
+    const handleLogout = (e) => {
+        e.preventDefault()
+
+        cookies.remove('access_token')
+        cookies.remove('user')
+        
+        dispatch(logoutUser())
+    }
+
+    let uiUser = (
+        <div className="wrap">
+            <span className="user-header">Tài khoản</span>
+            <IoIosArrowDown />
+            <ul className="user-dropdown">
+                <li className="btn-login-wrap">
+                    <Link to="/login" className="btn-login">Đăng nhập</Link>
+                </li>
+                <li className="register-text">
+                    Chưa có tài khoản?
+                    <a href="./registerPage.html" className="register-link"> Đăng ký </a>
+                        ngay!
+                </li>
+            </ul>
+        </div>
+    )
+
+    if (user !== null && user !== undefined) {
+        uiUser = (
+            <div className="wrap">
+                <span className="user-header">Chào, {user.username}</span>
+                <i className="fas fa-angle-down user-down"></i>
+                <ul className="user-dropdown">
+                    <li className="register-text user-manage__text">
+                        <a href="#" className="user-manage">Quản lý tài khoản</a>
+                    </li>
+                    <li className="btn-login-wrap">
+                        <Link onClick={handleLogout} className="btn-login btn-logout">Đăng xuất</Link>
+                    </li>
+                </ul>
+            </div>
+        )
+    }
+
     return (
         <header id="header">
             <div className="top-header">
@@ -74,33 +124,7 @@ function Header() {
                                 </ul>
                             </div>
                             <div className="user-wrapper">
-                                <div className="wrap">
-                                    <span className="user-header">Tài khoản</span>
-                                    <IoIosArrowDown />
-                                    <ul className="user-dropdown">
-                                        <li className="btn-login-wrap">
-                                            <a href="./loginPage.html" className="btn-login">Đăng nhập</a>
-                                        </li>
-                                        <li className="register-text">
-                                            Chưa có tài khoản?
-                                            <a href="./registerPage.html" className="register-link"> Đăng ký </a>
-                                             ngay!
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                {/* <div className="wrap">
-                                    <span className="user-header">Chào, admin</span>
-                                    <i className="fas fa-angle-down user-down"></i>
-                                    <ul className="user-dropdown">
-                                        <li className="register-text user-manage__text">
-                                            <a href="#" className="user-manage">Quản lý tài khoản</a>
-                                        </li>
-                                        <li className="btn-login-wrap">
-                                            <a href="./login.html" className="btn-login btn-logout">Đăng xuất</a>
-                                        </li>
-                                    </ul>
-                                </div> */}
+                                {uiUser}
                             </div>
                         </div>
                     </div>

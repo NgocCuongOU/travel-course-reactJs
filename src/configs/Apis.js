@@ -7,7 +7,10 @@ export let endpoints = {
     "blogs": "/posts/",
     "blog-detail": (blogId) => `/posts/${blogId}/`,
     "categories": "/categories/",
-    "tags": "/tags/"
+    "tags": "/tags/",
+    "oauth2-info": "/oauth2-info/",
+    "login": "/o/token/",
+    "current-user": "/users/current-user/"
 }
 
 export default axios.create({
