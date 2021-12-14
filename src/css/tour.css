@@ -1,59 +1,58 @@
 /* ---------------- Tour popular -------------- */
 .travel-main.popular-place {
-    margin: 140px 0 100px;
+  margin: 140px 0 100px;
 }
 
 .popular-place .popular-place__box-top {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 40px;
-    border: 1px solid #ccc;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 40px;
+  border: 1px solid #ccc;
 
-    background-color: #f6f6f6;
+  background-color: #f6f6f6;
 }
 
 .popular-place .popular-place__box-top span {
-    margin-right: 10px;
-    font-size: 1.6em;
+  margin-right: 10px;
+  font-size: 1.6em;
 }
 
 .popular-place .popular-place__box-top li i:last-child {
-    display: none;
+  display: none;
 }
 
 .popular-place .popular-place__box-top li.hide i:first-child {
-    display: none;
+  display: none;
 }
 
 .popular-place .popular-place__box-top li.hide i:last-child {
-    display: inline-block;
+  display: inline-block;
 }
 
 .popular-place .popular-place__box-top ul li {
-    display: inline-block;
-    font-size: 1.4em;
-    cursor: pointer;
+  display: inline-block;
+  font-size: 1.4em;
+  cursor: pointer;
 }
 
 .popular-place .popular-place__box-top ul li:not(:last-child) {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
-
 .form-check-paytour {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .form-check-paytour > label.form-check-label {
-    margin-left: 8px;
-    
-    font-size: 1.6rem;
-    cursor: pointer;
-    transition: 0.3s;
+  margin-left: 8px;
+
+  font-size: 1.6rem;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .form-check-paytour > label.form-check-label:hover {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }

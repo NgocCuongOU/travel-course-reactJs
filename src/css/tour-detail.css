@@ -1,264 +1,259 @@
 .tour-detail {
-    margin-top: 150px;
+  margin-top: 150px;
 }
 
 .tour-detail .tour-title {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .tour-detail .tour-title h2 {
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 40px;
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 40px;
 }
 
 .tour-detail .tour-rating {
-    display: flex;
-    margin-bottom: 18px;
+  display: flex;
+  margin-bottom: 18px;
 }
 
 .tour-detail .tour-rating .rating {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .tour-detail .tour-rating .rating li {
-    display: inline-block;
+  display: inline-block;
 }
 
 .tour-detail .tour-rating .rating-info,
 .tour-detail .tour-rating .rating-info span,
 .tour-detail .tour-rating .rating li a {
-    font-size: 1.4rem;
-    line-height: 22px;
+  font-size: 1.4rem;
+  line-height: 22px;
 
-    color: #333;
+  color: #333;
 }
 
 .tour-detail .tour-rating .rating-info .num-first,
 .tour-detail .tour-rating .rating-info .num-last {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .tour-detail .tour-detail__title {
-    padding-bottom: 4px;
-    margin-top: 30px;
-    margin-bottom: 8px;
-    border-bottom: 1px solid #ccc;
+  padding-bottom: 4px;
+  margin-top: 30px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #ccc;
 }
 
 .tour-detail .tour-detail__title h3 {
-    font-size: 2rem;
-    line-height: 30px;
-    font-weight: 700;
+  font-size: 2rem;
+  line-height: 30px;
+  font-weight: 700;
 
-    color: #666;
+  color: #666;
 }
 
 .tour-detail__content {
-    margin-bottom: 35px;
+  margin-bottom: 35px;
 }
 
 .tour-detail .tour-detail__content table tbody td {
-    padding: 5px;
+  padding: 5px;
 }
 
 .tour-detail__content table tbody td span {
-    font-size: 1.4rem;
-    font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 500;
 
-    color: #555555;
+  color: #555555;
 }
 
 .tour-detail__content table tbody td span strong {
-    font-weight: 700;
-    line-height: 18px;
+  font-weight: 700;
+  line-height: 18px;
 }
 
 .tour-detail__des {
-    margin-top: 14px;
+  margin-top: 14px;
 }
 
 .tour-detail__des {
-    font-style: italic;
-    font-size: 1.4rem;
-    line-height: 1.5;
+  font-style: italic;
+  font-size: 1.4rem;
+  line-height: 1.5;
 
-    color: #555555;
+  color: #555555;
 }
 
 .tour-detail__content .tour-detail__content-title h4 {
-    padding: 10px;
-    padding-left: 0;
+  padding: 10px;
+  padding-left: 0;
 
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
-.tour-detail__content  .tour-detail__content-main h4 {
-    font-size: 1.4rem;
-    line-height: 22px;
+.tour-detail__content .tour-detail__content-main h4 {
+  font-size: 1.4rem;
+  line-height: 22px;
 }
 
-.tour-detail__content  .tour-detail__content-main ul {
-    margin-left: 40px;
+.tour-detail__content .tour-detail__content-main ul {
+  margin-left: 40px;
 }
 
-.tour-detail__content  .tour-detail__content-main p,
-.tour-detail__content  .tour-detail__content-main ul li {
-    list-style-type: disc;
-    font-size: 1.4rem;
+.tour-detail__content .tour-detail__content-main p,
+.tour-detail__content .tour-detail__content-main ul li {
+  list-style-type: disc;
+  font-size: 1.4rem;
 }
 
 .tour-detail__gb p {
-    padding: 8px;
-    font-size: 1.6rem;
+  padding: 8px;
+  font-size: 1.6rem;
 }
 
 .page-item {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 
 .page-item .page-link {
-    font-size: 1.4rem;
-    color: #333232;
-    padding: 6px 12px;
-    border-radius: 4px;
-    border-color: #bad4ee;
+  font-size: 1.4rem;
+  color: #333232;
+  padding: 6px 12px;
+  border-radius: 4px;
+  border-color: #bad4ee;
 }
 
 /* --------------- comment box ---------- */
 
 .tour-detail__content .comments-area {
-    padding-top: 0;
+  padding-top: 0;
 }
 
 /* --------------- box info right ------------- */
 .box-right {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 150px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 150px;
 
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .box-right .tour-box-info {
-    padding: 15px;
-    margin-bottom: 25px;
-    border: solid 1px rgba(0,0,0,.15);
+  padding: 15px;
+  margin-bottom: 25px;
+  border: solid 1px rgba(0, 0, 0, 0.15);
 }
 
 .box-right .tour-box-info .tour-name {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    border-bottom: solid 1px rgba(0, 0, 0, .15);
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
 
-    font-size: 1.6rem;
-    line-height: 24px;
-    font-weight: 500;
+  font-size: 1.6rem;
+  line-height: 24px;
+  font-weight: 500;
 
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .tour-box-info .tour-box-detail ul li:not(:last-child) {
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 
 .tour-box-info .tour-box-detail ul li:not(:last-child) {
-    border-bottom: solid 1px rgba(0, 0, 0, .15);
+  border-bottom: solid 1px rgba(0, 0, 0, 0.15);
 }
 
 .tour-box-info .tour-box-detail ul li span {
-    display: inline-block;
+  display: inline-block;
 
-    font-size: 1.6rem;
+  font-size: 1.6rem;
 }
 
 .tour-box-info .tour-box-detail ul li .tour-key {
-    min-width: 140px;
+  min-width: 140px;
 
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /* -------- tour box fix ------------- */
 .tour-box-fix {
-    margin-bottom: 25px;
-    padding: 8px 0;
-    border-radius: 4px;
+  margin-bottom: 25px;
+  padding: 8px 0;
+  border-radius: 4px;
 
-    background-image: linear-gradient(
-              to right,
-              #FF7C2C,
-              #0BC799
-            );
+  background-image: linear-gradient(to right, #ff7c2c, #0bc799);
 }
 
 .tour-box-fix .tour-box-price {
-    padding: 4px 12px;
-    
-    text-align: center;
+  padding: 4px 12px;
+
+  text-align: center;
 }
 .tour-box-fix .tour-box-price span {
-    font-size: 1.6rem;
-    font-weight: bold;
-    line-height: 50px;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 50px;
 
-    color: #fff;
+  color: #fff;
 }
 
 .tour-box-fix .tour-box-price .tour-box-price__num {
-    font-size: 3rem;
-    font-style: oblique;
+  font-size: 3rem;
+  font-style: oblique;
 }
 
 .tour-box-fix .tour-box-price .tour-box-price__nor {
-    font-size: 1.6rem;
-    text-decoration: line-through;
+  font-size: 1.6rem;
+  text-decoration: line-through;
 }
 
 .tour-box-btn {
-    margin-bottom: 8px;
+  margin-bottom: 8px;
 }
 
 .tour-box-btn .btn.btn-tdetail {
-    width: 90%;
-    padding: 8px 18px;
+  width: 90%;
+  padding: 8px 18px;
 
-    color: #fff;
-    background-color: var(--primary-color);
+  color: #fff;
+  background-color: var(--primary-color);
 }
 
 .tour-box-btn .btn.btn-tdetail:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
-
 
 /* ------------ tour box right index -------------- */
 .tour-box-index {
-    background-color: #f3f3f3;
+  background-color: #f3f3f3;
 }
 
 .tour-box-index ul li {
-    border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 .tour-box-index ul li a {
-    display: block;
-    padding: 9px 10px;
+  display: block;
+  padding: 9px 10px;
 
-    font-size: 1.6rem;
-    line-height: 22px;
-    font-weight: 700;
-    color: #333;
-    transition: all 0.3s linear;
+  font-size: 1.6rem;
+  line-height: 22px;
+  font-weight: 700;
+  color: #333;
+  transition: all 0.3s linear;
 }
 
-.tour-box-index ul li:hover a, 
+.tour-box-index ul li:hover a,
 .tour-box-index ul li.active a {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .tour-box-index ul li a span {
-    position: relative;
-    display: inline-block;
-    min-width: 30px;
+  position: relative;
+  display: inline-block;
+  min-width: 30px;
 }

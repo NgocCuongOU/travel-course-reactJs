@@ -1,68 +1,67 @@
 /* ----------------- Brad cam ----------------- */
 .bradcam-img {
-    background-image: url(../images/bradcam3.png);
+  background-image: url(../images/bradcam3.png);
 }
 
 /* --------------- about-story ---------------- */
 .about-story .about-story__heading h3 {
-    margin-bottom: 60px;
+  margin-bottom: 60px;
 
-    font-size: 3.8em;
-    font-weight: 400;
+  font-size: 3.8em;
+  font-weight: 400;
 
-    color: #040E27;
-
+  color: #040e27;
 }
 
 .about-story .about-story__info {
-    margin-bottom: 52px;
+  margin-bottom: 52px;
 }
 
 .about-story .about-story__info p {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 
-    font-size: 1.6em;
-    line-height: 28px;
-    font-weight: 400;
+  font-size: 1.6em;
+  line-height: 28px;
+  font-weight: 400;
 
-    color: #7A838B;
+  color: #7a838b;
 }
 
 .about-story .about-story__thumb .thumb {
-    margin-bottom: 52px;
-    min-height: 300px;
+  margin-bottom: 52px;
+  min-height: 300px;
 }
 
 .about-story .about-story__thumb .thumb img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }
 
 .about-story .about-story__thumb .part-left {
-    padding-right: 58px;
+  padding-right: 58px;
 }
 
 .about-story .counter-wrap .single_counter {
-    margin-bottom: 30px;
-    height: 100%;
+  margin-bottom: 30px;
+  height: 100%;
 }
 
 .about-story .counter-wrap .single_counter h3 {
-    margin-bottom: 18px;
+  margin-bottom: 18px;
 
-    font-size: 5.5em;
-    font-weight: 400;
-    line-height: 73px;
-    text-align: center;
+  font-size: 5.5em;
+  font-weight: 400;
+  line-height: 73px;
+  text-align: center;
 
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .about-story .counter-wrap .single_counter p {
-    font-size: 1.6em;
-    line-height: 28px;
-    text-align: center;
+  font-size: 1.6em;
+  line-height: 28px;
+  text-align: center;
 
-    color: #7A838B;
+  color: #7a838b;
 }

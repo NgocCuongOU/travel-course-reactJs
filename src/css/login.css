@@ -1,29 +1,29 @@
 * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 html {
-    color: #333;
-    font-size: 62.5%;
-    font-family: 'Open Sans', sans-serif;
+  color: #333;
+  font-size: 62.5%;
+  font-family: "Open Sans", sans-serif;
 }
 
 p {
-    margin: 0;
+  margin: 0;
 }
 
 .main {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 
-    min-height: 100vh;
+  min-height: 100vh;
 
-    background-color: #f1f1f1;
-    /* background-image: url(../img/background.png);
+  background-color: #f1f1f1;
+  /* background-image: url(../img/background.png);
     background-position: center center;
     background-size: cover;
     background-repeat: repeat; */
@@ -58,337 +58,335 @@ p {
 } */
 
 .form .icon-close {
-    position: absolute;
-    top: 8px;
-    right: 12px;
+  position: absolute;
+  top: 8px;
+  right: 12px;
 
-    display: inline-block;
-    padding: 6px 8px;
+  display: inline-block;
+  padding: 6px 8px;
 
-    font-size: 1.6rem;
-    transition: 0.2s;
+  font-size: 1.6rem;
+  transition: 0.2s;
 }
 
-
 .form .icon-close:hover {
-    color: var(--secondary-color);
+  color: var(--secondary-color);
 }
 
 .login-with-another {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    height: 50px;
-    padding: 6px 14px;
-    margin-bottom: 16px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+  height: 50px;
+  padding: 6px 14px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .login-with-another p a {
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-decoration: none;
 
-    color: #636d77;
+  color: #636d77;
 }
 
 .login-with-another .google-thumb {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 .login-with-another .google-thumb a {
-    display: inline-block;
+  display: inline-block;
 }
 
 .login-with-another .google-thumb a svg {
-    font-size: 2.6rem;
-    color: #4C6EF5;
+  font-size: 2.6rem;
+  color: #4c6ef5;
 }
 
 .login-with-another .google-thumb img {
-    display: inline-block;
-    height: 30px;
-    width: 30px;
-}   
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+}
 
 .form .heading {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 .form .desc {
-    text-align: center;
-    color: #636d77;
-    font-size: 1.6rem;
-    font-weight: lighter;
-    line-height: 2.4rem;
-    margin-top: 16px;
-    font-weight: 300;
+  text-align: center;
+  color: #636d77;
+  font-size: 1.6rem;
+  font-weight: lighter;
+  line-height: 2.4rem;
+  margin-top: 16px;
+  font-weight: 300;
 }
 
 .form-group {
-    display: flex;
-    margin-bottom: 16px;
-    flex-direction: column;
+  display: flex;
+  margin-bottom: 16px;
+  flex-direction: column;
 }
 
 .form-group .form-message-login {
-    border-radius: 4px;
-    padding: 4px 0px;
+  border-radius: 4px;
+  padding: 4px 0px;
 
-    border: 1px solid #ffdae6;
+  border: 1px solid #ffdae6;
 
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
 
-    color: var(--secondary-color);
-    background-color: lavenderblush;
-   
+  color: var(--secondary-color);
+  background-color: lavenderblush;
 }
 
 .form-label,
 .form-message {
-    text-align: left;
+  text-align: left;
 }
 
 .form-label {
-    font-weight: 700;
-    padding-bottom: 6px;
-    line-height: 1.8rem;
-    font-size: 1.4rem;
+  font-weight: 700;
+  padding-bottom: 6px;
+  line-height: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .form-control {
-    height: 40px;
-    padding: 8px 12px  !important;
-    border: 1px solid #b3b3b3 !important;
-    border-radius: 3px !important;
-    outline: none;
-    font-size: 1.4rem !important;
+  height: 40px;
+  padding: 8px 12px !important;
+  border: 1px solid #b3b3b3 !important;
+  border-radius: 3px !important;
+  outline: none;
+  font-size: 1.4rem !important;
 }
 
 .form-control:hover {
-    border-color: #1dbfaf;
+  border-color: #1dbfaf;
 }
 
 .form-group.invalid .form-control {
-    border-color: #f33a58;
+  border-color: #f33a58;
 }
 
 .form-group.invalid .form-message {
-    color: #f33a58;
+  color: #f33a58;
 }
 
 .form-message {
-    font-size: 1.2rem;
-    line-height: 1.6rem;
-    padding: 4px 0 0;
+  font-size: 1.2rem;
+  line-height: 1.6rem;
+  padding: 4px 0 0;
 }
 
 .form-submit {
-    outline: none;
-    background-color: #1dbfaf;
-    margin-top: 12px;
-    padding: 12px 16px;
-    font-weight: 600;
-    color: #fff;
-    border: none;
-    width: 100%;
-    font-size: 14px;
-    border-radius: 8px;
-    cursor: pointer;
+  outline: none;
+  background-color: #1dbfaf;
+  margin-top: 12px;
+  padding: 12px 16px;
+  font-weight: 600;
+  color: #fff;
+  border: none;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 .form-submit:focus {
-    outline: none;
+  outline: none;
 }
 
 .form-submit:hover {
-    background-color: #1ac7b6;
+  background-color: #1ac7b6;
 }
 
 .spacer {
-    margin-top: 36px;
+  margin-top: 36px;
 }
 
 .space-second {
-    position: relative;
+  position: relative;
 
-    margin-bottom: 16px;
+  margin-bottom: 16px;
 
-    text-align: center;
-    font-size: 1.4rem;
-    
-    color: rgba(47, 47, 47, 0.8);
+  text-align: center;
+  font-size: 1.4rem;
+
+  color: rgba(47, 47, 47, 0.8);
 }
 
-.space-second::before, .space-second::after {
-    content: "";
-    display: inline-block;
-    position: absolute;
-    top: 50%;
-    width: 200px;
-    border: 1px solid #ccc;
+.space-second::before,
+.space-second::after {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  width: 200px;
+  border: 1px solid #ccc;
 }
 
 .space-second::before {
-    left: 0;
+  left: 0;
 }
 
 .space-second::after {
-    right: 0;
+  right: 0;
 }
 
 .forgot-password {
-    margin-top: -10px;
-    margin-bottom: 10px;
-    text-align: end;
-    font-size: 1.4rem;
-    line-height: 18px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  text-align: end;
+  font-size: 1.4rem;
+  line-height: 18px;
 }
 
 .forgot-password a {
-    text-decoration: none;
-    color: #313131;
+  text-decoration: none;
+  color: #313131;
 }
 
 .form-extends p {
-    padding: 16px 0px 8px;
-    font-size: 1.6rem;
-    text-align: left;
-    transition: all 0.3s linear;
+  padding: 16px 0px 8px;
+  font-size: 1.6rem;
+  text-align: left;
+  transition: all 0.3s linear;
 }
 
 .forgot-password a:hover,
 .form-extends p a {
-    padding: 5px 0;
-    color: #FF4A52;
+  padding: 5px 0;
+  color: #ff4a52;
 }
 
 /* ----------------------- upload file -------------- */
 .img-wrapper {
-    position: relative;
+  position: relative;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    width: 100%;
-    min-height: 300px;
-    border: 2px dashed #ccc;
-    border-radius: 4px;
-    overflow: hidden;
-    transition: 1.3s;
+  width: 100%;
+  min-height: 300px;
+  border: 2px dashed #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: 1.3s;
 }
 
 .img-wrapper.active {
-    border: none;
+  border: none;
 }
 
 .img-wrapper .image {
-    position: absolute;
+  position: absolute;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .img-wrapper .image img {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    object-fit: cover;
-    object-position: 100% 60%;
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: 100% 60%;
 }
 
 .img-wrapper .upload-icon {
-    text-align: center;
-    font-size: 4rem;
-    color: #1dbfaf;
+  text-align: center;
+  font-size: 4rem;
+  color: #1dbfaf;
 }
 
 .img-wrapper .upload-text {
-    font-size: 1.4rem;
-    font-weight: 500;
+  font-size: 1.4rem;
+  font-weight: 500;
 
-    color: #313131;
+  color: #313131;
 }
 
 #cancel-btn {
-    position: absolute;
-    top: 8px;
-    right: 8px;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 
-    display: none;
-    padding: 8px;
+  display: none;
+  padding: 8px;
 
-    font-size: 15px;
+  font-size: 15px;
 
-    color: #3b2323;
+  color: #3b2323;
 
-    cursor: pointer;
-    transition: 0.2s;
+  cursor: pointer;
+  transition: 0.2s;
 }
 
 .img-wrapper.active:hover div#cancel-btn {
-    display: block;
+  display: block;
 }
 
-
 .img-wrapper #cancel-btn:hover {
-    color: #FF4A52;
+  color: #ff4a52;
 }
 
 .img-wrapper .file-name {
-    position: absolute;
-    bottom: 0;
-    
-    display: none;
-    width: 100%;
-    padding: 3px 0;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-    font-size: 1.4rem;
-    
-    background-color: #1ac7b6;
-    color: #fff;
+  position: absolute;
+  bottom: 0;
+
+  display: none;
+  width: 100%;
+  padding: 3px 0;
+  border-bottom-right-radius: 4px;
+  border-bottom-left-radius: 4px;
+  font-size: 1.4rem;
+
+  background-color: #1ac7b6;
+  color: #fff;
 }
 
 .img-wrapper.active:hover .file-name {
-    display: block;
+  display: block;
 }
 
 .form #custom-upload-btn {
-    display: block;
-    margin-bottom: 10px;
-    width: 100%;
-    height: 35px;
-    border: none;
-    border-radius: 4px;
+  display: block;
+  margin-bottom: 10px;
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 4px;
 
-    font-size: 1.4rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 
-    color: #fff;
-    background-color: #1ac7b6;
+  color: #fff;
+  background-color: #1ac7b6;
 
-    outline: none;
-    cursor: pointer;
-    transition: all 0.2s linear;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.2s linear;
 }
 
 .form #custom-upload-btn:hover {
-    opacity: 0.85;
+  opacity: 0.85;
 }
 
 .wrap-submit .btn {
-    padding: 8px 16px;
+  padding: 8px 16px;
 }
