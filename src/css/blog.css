@@ -267,6 +267,7 @@
 .recent-post .media {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .recent-post .media:not(:last-child) {

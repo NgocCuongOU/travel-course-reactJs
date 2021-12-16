@@ -1,3 +1,14 @@
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import Apis, { endpoints } from "../configs/Apis";
+import { useParams } from "react-router";
+import { Link } from "react-router-dom";
+import { Markup } from "interweave";
+import cookies from 'react-cookies'
+import PacmanLoader from "react-spinners/PacmanLoader"
+import BeatLoader from "react-spinners/BeatLoader"
+import { useLocation, useHistory } from "react-router-dom";
+
 import Bradcam from "../components/Bradcam";
 import CategoryWidget from "../components/CategoryWidget";
 import SearchWidget from "../components/SearchWidget";
@@ -7,15 +18,7 @@ import InstagramWidget from "../components/InstagramWidget";
 import NewLetterWidget from "../components/NewLetterWidget";
 import RelatedBlog from "../components/RelatedBlog";
 import Comment from "../components/Comment";
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import Apis, { endpoints } from "../configs/Apis";
-import { useParams } from "react-router";
-import { css } from "@emotion/react";
-import { PulseLoader } from "react-spinners/PulseLoader";
-import { Link } from "react-router-dom";
-import { Markup } from "interweave";
-import cookies from 'react-cookies'
+
 
 import { BsHeart, BsHeartFill } from "react-icons/bs";
 import defaultAvatar from "../images/avtar/default-avatar.png";
@@ -28,18 +31,20 @@ import "../css/blog.css";
 import "../css/blog-details.css";
 
 function BlogDetail() {
-  const [blogDetail, setBlogDetail] = useState([]);
+  const [blogDetail, setBlogDetail] = useState(null);
   const [comments, setComments] = useState([]);
   const [commentContent, setCommentContent] = useState("");
   const user = useSelector((state) => state.user.user);
   const [checkComment, setCheckComment] = useState(1)
+  const location = useLocation()
 
   let { blogId } = useParams();
 
   useEffect(() => {
+    console.log(location)
     loadComments();
     loadBlog();
-  }, [checkComment]);
+  }, [checkComment, location.pathname]);
 
   const loadBlog = async () => {
     try {
@@ -49,7 +54,7 @@ function BlogDetail() {
       console.error(error);
     }
   };
-
+  
   const loadComments = async () => {
     try {
       const res = await Apis.get(endpoints["comments-post"](blogId));
@@ -133,6 +138,86 @@ function BlogDetail() {
     );
   }
 
+  let contentLeft = <PacmanLoader loading={true} size={50} color={`#1ec6b6`} />
+
+  if (blogDetail !== null & blogDetail !== undefined) {
+    contentLeft = (
+      <div className="blog__left-sidebar">
+        <article className="blog-item">
+          <div className="blog-item__img">
+            <img src={blogDetail.image} alt={blogDetail.title} />
+            <Link
+              to={`/blogs/${blogDetail.id}`}
+              className="blog-item__date"
+            >
+              <h3>{new Date(blogDetail.created_date).getDate()}</h3>
+              <p>
+                Tháng {new Date(blogDetail.created_date).getMonth()}
+              </p>
+              <h3>{new Date(blogDetail.created_date).getFullYear()}</h3>
+            </Link>
+          </div>
+          <div className="blog-item__content">
+            <h3 className="blog-item__content-title">
+              <Link to={`/blogs/${blogDetail.id}`}>
+                {blogDetail.title}
+              </Link>
+            </h3>
+            <div className="blog-item__wrap">
+              <ul className="blog-item__info">
+                <li>
+                  <a href="#">
+                    <FaUserCircle />
+                    {`${blogDetail.user.last_name} ${blogDetail.user.first_name}`}
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <FaComments />
+                    03 comments
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className="blog-item__content-detail">
+              <Markup content={blogDetail.content} />
+            </div>
+            <div className="blog-tag">Tag:
+              {blogDetail.tags.map(tag => <Link to={`#`}>{` ${tag.name}, `}</Link>)}
+            </div>
+            <div className="blog-cate">Danh mục:
+              <Link to={`#`}> {blogDetail.category.name}</Link>
+            </div>
+            <div className="blog-item__reaction">
+              <p className="like-info">
+                <span className="like">
+                  <BsHeart />
+                  <BsHeartFill />
+                </span>
+                <span>Bạn, và 4 người khác</span>
+              </p>
+            </div>
+          </div>
+        </article>
+        <RelatedBlog />
+        <div className="comments-area">
+          <h4>05 bình luận</h4>
+          <div className="comments-list">
+            {comments.map((comment) => (
+              <Comment
+                content={comment.content}
+                createdDate={comment.created_date}
+                user={comment.user}
+              />
+            ))}
+          </div>
+        </div>
+        {commentBox}
+      </div>
+    )
+  }
+
+
   return (
     <div id="main">
       <Bradcam
@@ -144,74 +229,7 @@ function BlogDetail() {
         <div className="container">
           <div className="row">
             <div className="col col-lg-8">
-              <div className="blog__left-sidebar">
-                <article className="blog-item">
-                  <div className="blog-item__img">
-                    <img src={blogDetail.image} alt={blogDetail.title} />
-                    <Link
-                      to={`/blogs/${blogDetail.id}`}
-                      className="blog-item__date"
-                    >
-                      <h3>{new Date(blogDetail.created_date).getDay()}</h3>
-                      <p>
-                        Tháng {new Date(blogDetail.created_date).getMonth()}
-                      </p>
-                      <h3>{new Date(blogDetail.created_date).getFullYear()}</h3>
-                    </Link>
-                  </div>
-                  <div className="blog-item__content">
-                    <h3 className="blog-item__content-title">
-                      <Link to={`/blogs/${blogDetail.id}`}>
-                        {blogDetail.title}
-                      </Link>
-                    </h3>
-                    <div className="blog-item__wrap">
-                      <ul className="blog-item__info">
-                        <li>
-                          <a href="#">
-                            <FaUserCircle />
-                            Bùi Văn Nguyện
-                          </a>
-                        </li>
-                        <li>
-                          <a href="#">
-                            <FaComments />
-                            03 comments
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                    <div className="blog-item__content-detail">
-                      <Markup content={blogDetail.content} />
-                    </div>
-                    <div className="blog-tag">Tag:</div>
-                    <div className="blog-cate">Danh mục:</div>
-                    <div className="blog-item__reaction">
-                      <p className="like-info">
-                        <span className="like">
-                          <BsHeart />
-                          <BsHeartFill />
-                        </span>
-                        <span>Bạn, và 4 người khác</span>
-                      </p>
-                    </div>
-                  </div>
-                </article>
-                <RelatedBlog />
-                <div className="comments-area">
-                  <h4>05 bình luận</h4>
-                  <div className="comments-list">
-                    {comments.map((comment) => (
-                      <Comment
-                        content={comment.content}
-                        createdDate={comment.created_date}
-                        user={comment.user}
-                      />
-                    ))}
-                  </div>
-                </div>
-                {commentBox}
-              </div>
+              {contentLeft}
             </div>
             <div className="col col-lg-4">
               <div className="blog__right-sidebar">

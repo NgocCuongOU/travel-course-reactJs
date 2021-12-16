@@ -23,7 +23,7 @@ function CardBlog(props) {
           <ul className="blog-item__info">
             <li>
               <Link to={`/blogs/${props.blog.id}`}>
-                <FaUserCircle /> Cao Ngọc Cường
+                <FaUserCircle /> {`${props.blog.user.last_name} ${props.blog.user.first_name}`}
               </Link>
             </li>
             <li>

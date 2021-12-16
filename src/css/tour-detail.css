@@ -17,6 +17,15 @@
   margin-bottom: 18px;
 }
 
+.tour-detail .tour-rating > span > span {
+  width: 20px;
+  height: 20px;
+}
+
+.tour-detail .tour-rating > span > span > span > img {
+  width: 100%;
+}
+
 .tour-detail .tour-rating .rating {
   margin-right: 8px;
 }

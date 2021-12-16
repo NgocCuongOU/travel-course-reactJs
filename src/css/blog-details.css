@@ -75,7 +75,8 @@
 .blog__left-sidebar .related-blog {
   display: flex;
   flex-wrap: wrap;
-
+  justify-content: space-evenly;
+  width: 100%;
   padding-top: 10px;
   margin-bottom: 30px;
   border-bottom: 1px solid #ebebeb;
@@ -84,6 +85,13 @@
 .blog__left-sidebar .related-blog .related-blog__item {
   width: 33.3333%;
   padding: 10px;
+}
+
+.blog__left-sidebar .related-blog .related-blog__item > span {
+  display: inline-block;
+  width: 100%;
+  
+  text-align: center;
 }
 
 .blog__left-sidebar .related-blog .related-blog__item h3 {

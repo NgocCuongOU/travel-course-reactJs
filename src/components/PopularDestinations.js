@@ -14,27 +14,27 @@ function PopularDestinations() {
   const location = useLocation();
 
   useEffect(() => {
-    const loadTours = async () => {
+    loadTours();
+  }, [location.search, page]);
+
+  const loadTours = async () => {
+    try {
       let query = location.search;
       if (query === "") {
         query = `?page=${page}`;
       } else {
         query += `&page=${page}`;
       }
+      
+      let res = await Apis.get(`${endpoints["tours"]}${query}`);
+      setTours(res.data.results);
 
-      try {
-        let res = await Apis.get(`${endpoints["tours"]}${query}`);
-        setTours(res.data.results);
-
-        setPrev(res.data.previous !== null);
-        setNext(res.data.next !== null);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    loadTours();
-  }, [location.search, page]);
+      setPrev(res.data.previous !== null);
+      setNext(res.data.next !== null);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const pagination = (num) => {
     setPage(page + num);
@@ -65,7 +65,7 @@ function PopularDestinations() {
               <Pagination
                 prev={!prev}
                 next={!next}
-                handlePagePre={() => pagination(-1)}
+                handlePagePrev={() => pagination(-1)}
                 handlePageNext={() => pagination(1)}
               />
             </div>

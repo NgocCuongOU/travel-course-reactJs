@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
+import { BsArrowDown, BsArrowUp } from "react-icons/bs";
+import { useLocation } from "react-router";
+
+import News from "../components/News";
 import CardTour from "../components/CardTour";
 import SearchTour from "../components/SearchTour";
 import Slider from "../components/Slider";
 import Apis, { endpoints } from "../configs/Apis";
-import { BsArrowDown, BsArrowUp } from "react-icons/bs";
-import "../css/tour.css";
-import { useLocation } from "react-router";
-import News from "../components/News";
 import Blogs from "../components/Blogs";
 import Pagination from "../components/Pagination";
+import "../css/tour.css";
 
 function Tours() {
   const [tours, setTours] = useState([]);

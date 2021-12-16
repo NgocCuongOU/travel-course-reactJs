@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+import cookies from "react-cookies";
+import { useDispatch, useSelector } from "react-redux";
+
+import { logoutUser } from "../ActionCreator/userCreator";
+import { SiFacebook, SiInstagram } from "react-icons/si";
 import logo from "../images/logo.png";
 import { IoIosArrowDown } from "react-icons/io";
-import { SiFacebook, SiInstagram } from "react-icons/si";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import cookies from "react-cookies";
-import { logoutUser } from "../ActionCreator/userCreator";
+import { FaUserCircle } from "react-icons/fa"
 
 function Header() {
   const user = useSelector((state) => state.user.user);
@@ -21,8 +23,9 @@ function Header() {
 
   let uiUser = (
     <div className="wrap">
+      <FaUserCircle className="icon-auth"/>
       <span className="user-header">Tài khoản</span>
-      <IoIosArrowDown />
+      <IoIosArrowDown className="icon-auth" />
       <ul className="user-dropdown">
         <li className="btn-login-wrap">
           <Link to="/login" className="btn-login">
@@ -44,7 +47,9 @@ function Header() {
   if (user !== null && user !== undefined) {
     uiUser = (
       <div className="wrap">
+        <FaUserCircle className="icon-auth"/>
         <span className="user-header">Chào, {user.username}</span>
+        <IoIosArrowDown className="icon-auth"/>
         <i className="fas fa-angle-down user-down"></i>
         <ul className="user-dropdown">
           <li className="register-text user-manage__text">
@@ -92,7 +97,7 @@ function Header() {
               </h1>
             </div>
           </div>
-          <div className="col col-md-6 col-lg-7">
+          <div className="col col-md-6 col-lg-8">
             <ul className="navbar-list">
               <li className="navbar-list__item active">
                 <Link to="/">Trang chủ</Link>
@@ -124,22 +129,8 @@ function Header() {
               </li>
             </ul>
           </div>
-          <div className="col col-md-4 col-lg-3">
+          <div className="col col-md-4 col-lg-2">
             <div className="login">
-              <div className="socials-wrap">
-                <ul className="socials-list">
-                  <li className="socials-list__item">
-                    <a href="">
-                      <SiFacebook />
-                    </a>
-                  </li>
-                  <li className="socials-list__item">
-                    <a href="">
-                      <SiInstagram />
-                    </a>
-                  </li>
-                </ul>
-              </div>
               <div className="user-wrapper">{uiUser}</div>
             </div>
           </div>

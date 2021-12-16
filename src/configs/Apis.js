@@ -16,7 +16,9 @@ export let endpoints = {
   "comments-tour": (tourId) => `/tours/${tourId}/comments/`,
   "add-comment-post": (postId) => `/posts/${postId}/add_comment/`,
   "add-comment-tour": (tourId) => `/tours/${tourId}/add_comment/`,
-  rating: (tourId) => `/tours/${tourId}/rate/`
+  rating: (tourId) => `/tours/${tourId}/rate/`,
+  "recently-post": "/posts/recently_posts",
+  "recently-post-main": "/posts/recently_posts_main"
 };
 
 export default axios.create ({
