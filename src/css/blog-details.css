@@ -277,6 +277,10 @@
   background-color: #f05123;
 }
 
+.comment-box .user-comment .user-action .user-btn.submit:hover a {
+  color: #fff;
+}
+
 .comment-box .user-comment .user-action .user-btn.disabled.submit:hover {
   background-color: #ccc;
   cursor: default;

@@ -89,7 +89,7 @@ function Tours() {
             <div className="col col-lg-12">
               <div className="popular-place-pagi">
                 <Pagination
-                  pre={!prev}
+                  prev={!prev}
                   next={!next}
                   handlePagePrev={() => handlePage(-1)}
                   handlePageNext={() => handlePage(1)}

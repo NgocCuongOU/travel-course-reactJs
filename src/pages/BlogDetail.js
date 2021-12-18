@@ -52,7 +52,6 @@ function BlogDetail() {
     try {
       const res = await Apis.get(endpoints["blog-detail"](blogId));
       setBlogDetail(res.data);
-      console.log(res.data)
       setShowCommentsCount(res.data.comment_count);
     } catch (error) {
       console.error(error);
@@ -164,7 +163,6 @@ function BlogDetail() {
     views !== null &&
     showCommentsCount !== null
   ) {
-    console.log(blogDetail)
     contentLeft = (
       <div className="blog__left-sidebar">
         <article className="blog-item">

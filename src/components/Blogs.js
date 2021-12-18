@@ -17,7 +17,6 @@ function Blogs() {
     try {
       const res = await Apis.get(endpoints["recently-post-main"]);
       setBlogs(res.data);
-      console.log(res.data);
     } catch (error) {
       console.error(error);
     }

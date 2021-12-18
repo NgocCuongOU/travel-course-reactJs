@@ -19,6 +19,7 @@ export let endpoints = {
   rating: (tourId) => `/tours/${tourId}/rate/`,
   "recently-post": "/posts/recently_posts",
   "recently-post-main": "/posts/recently_posts_main",
+  "related-post": (postId) => `/posts/${postId}/related_posts/`,
   "incre-views": (postId) => `/posts/${postId}/views`
 };
 

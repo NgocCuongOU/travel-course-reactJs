@@ -3,17 +3,21 @@ import { useState, useEffect } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
 
 import Apis, { endpoints } from "../configs/Apis";
+import { useParams } from "react-router"
 
 function RelatedBlog() {
   const [blogsRelated, setBlogsRelated] = useState(null);
+  const { blogId } = useParams()
 
+  
   useEffect(() => {
     handleLoadBlogsRelated();
   }, []);
 
   const handleLoadBlogsRelated = async () => {
     try {
-      const res = await Apis.get(endpoints["recently-post"]);
+      const res = await Apis.get(endpoints["related-post"](blogId))
+      console.log(res.data)
       setBlogsRelated(res.data);
     } catch (error) {
       console.error(error);

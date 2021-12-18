@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 
 function CardTour(props) {
   let path = `/tours/${props.tour.id}`;
+  const formatter = new Intl.NumberFormat("vi-VN", {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  })
 
   return (
     <div className="col col-lg-4" key={props.tour.id}>
@@ -14,7 +19,7 @@ function CardTour(props) {
           <Link
             className="price"
             to={path}
-          >{`${props.tour.children_price} - ${props.tour.adults_price} (VNĐ)`}</Link>
+          >{`${formatter.format(props.tour.children_price)} - ${formatter.format(props.tour.adults_price)}`}</Link>
         </div>
         <div className="place-info">
           <Link to={path}>
