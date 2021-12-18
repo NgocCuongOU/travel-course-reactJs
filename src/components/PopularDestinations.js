@@ -48,8 +48,7 @@ function PopularDestinations() {
             <div className="section-title">
               <h3>Địa điểm phổ biến</h3>
               <p>
-                Suffered alteration in some form, by injected humour or good day
-                randomised booth anim 8-bit hella wolf moon beard words.
+                "&#9752;Trong mỗi bước đi cùng với thiên nhiên, chúng ta nhận được nhiều hơn những gì chúng ta kiếm.&#9752;"
               </p>
             </div>
           </div>

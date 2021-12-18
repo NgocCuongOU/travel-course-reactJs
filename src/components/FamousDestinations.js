@@ -9,8 +9,7 @@ function FamousDestinations() {
             <div className="section-title">
               <h3>Địa điểm nổi tiếng</h3>
               <p>
-                Suffered alteration in some form, by injected humour or good day
-                randomised booth anim 8-bit hella wolf moon beard words.
+                "&#9752;Du lịch – ban đầu nó khiến bạn không thốt nên lời, và sau đó biến bạn trở thành một người kể chuyện.&#9752;"
               </p>
             </div>
           </div>

@@ -171,6 +171,8 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  
+  color: var(--text-color);
 }
 
 .user-wrapper .wrap::before {
@@ -238,7 +240,7 @@
   font-size: 1.6rem;
   font-weight: 500;
 
-  color: #494b55;
+  color: var(--text-color);
 }
 
 .user-dropdown .btn-login-wrap {
@@ -902,8 +904,15 @@
 }
 
 .single-place .rating-days span {
-  display: flex;
+  display: inline-block;
   align-items: center;
+  height: 21px;
+
+  font-size: 1.4rem;
+  font-weight: 500;
+  line-height: 21px;
+
+  color: #7a838b;
 }
 
 .single-place .rating-days span i {
@@ -928,12 +937,20 @@
   color: #7a838b;
 }
 
+.single-place .place-info .rating-days .days svg {
+  display: inline-block;
+  height: 21px;
+
+
+  line-height: 21px;
+}
+
 .single-place .rating-days .days i {
   margin-right: 8px;
 }
 
 .single-place .rating-days .days a {
-  margin-left: 8px;
+  margin-left: 6px;
   color: #7a838b;
 }
 

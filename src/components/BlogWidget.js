@@ -13,7 +13,6 @@ function BlogWidget() {
   const handleLoadBlogsWidget = async () => {
     try {
       const res = await Apis.get(endpoints["recently-post"]);
-      console.log(res.data)
       setBlogsWidget(res.data)
     } catch (error) {
       console.error(error);

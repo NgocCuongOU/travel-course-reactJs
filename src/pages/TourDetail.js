@@ -4,12 +4,6 @@ import "../css/blog-details.css";
 import "../css/tour-detail.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import {
-  BsFillInfoCircleFill,
-  BsFillMapFill,
-  BsPaperclip,
-} from "react-icons/bs";
-
 import { BiNote, BiCommentDetail } from "react-icons/bi";
 import React, { useEffect, useState } from "react";
 import Apis, { endpoints } from "../configs/Apis";
@@ -19,15 +13,21 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import cookies from "react-cookies";
 import Rating from "react-rating"
+import { Markup } from "interweave";
 
 import InfoRightTourDetail from "../components/InfoRightTourDetail";
 import Schedule from "../components/Schedules";
-import { Markup } from "interweave";
 import Comment from "../components/Comment";
 
 import defaultAvatar from "../images/avtar/default-avatar.png";
 import ratingStarEmpty from "../images/rating/star-icon.png"
 import ratingStarFull from "../images/rating/star-icon-full.png"
+
+import {
+  BsFillInfoCircleFill,
+  BsFillMapFill,
+  BsPaperclip,
+} from "react-icons/bs";
 
 function TourDetail() {
   const [tourDetail, setTourDetail] = useState([]);
@@ -37,6 +37,8 @@ function TourDetail() {
   const [commentContent, setCommentContent] = useState("");
   const [checkComment, setCheckComment] = useState(1);
   const [rating, setRating] = useState(0)
+  const [commentCounter, setCommentCounter] = useState(null)
+
   const user = useSelector((state) => state.user.user);
 
   let { tourId } = useParams();
@@ -55,9 +57,10 @@ function TourDetail() {
         "Authorization": `Bearer ${cookies.load("access_token")}`
         }
       });
-
+      
       setTourDetail(res.data);
       setRating(res.data.rate);
+      setCommentCounter(res.data.comment_count)
     } catch (error) {
       console.log(error);
     }
@@ -298,7 +301,7 @@ function TourDetail() {
                 </div>
                 <div className="tour-detail__content">
                   <div className="comments-area">
-                    <h4>05 bình luận</h4>
+                    <h4>{commentCounter === null ? "" : commentCounter} bình luận</h4>
                     <div className="comments-list">
                       {comments.map((comment) => {
                         return (

@@ -22,14 +22,7 @@ function CardTour(props) {
           </Link>
           <p>{props.tour.tour_type}</p>
           <div className="rating-days">
-            <span>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <a href="">(20 bình luận)</a>
-            </span>
+            <span>({props.tour.comment_count} bình luận)</span>
             <div className="days">
               <AiFillClockCircle />
               <Link
