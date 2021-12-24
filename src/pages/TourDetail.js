@@ -12,7 +12,7 @@ import { useParams } from "react-router";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import cookies from "react-cookies";
-import Rating from "react-rating"
+import Rating from "react-rating";
 import { Markup } from "interweave";
 
 import InfoRightTourDetail from "../components/InfoRightTourDetail";
@@ -20,14 +20,15 @@ import Schedule from "../components/Schedules";
 import Comment from "../components/Comment";
 
 import defaultAvatar from "../images/avtar/default-avatar.png";
-import ratingStarEmpty from "../images/rating/star-icon.png"
-import ratingStarFull from "../images/rating/star-icon-full.png"
+import ratingStarEmpty from "../images/rating/star-icon.png";
+import ratingStarFull from "../images/rating/star-icon-full.png";
 
 import {
   BsFillInfoCircleFill,
-  BsFillMapFill,
   BsPaperclip,
 } from "react-icons/bs";
+
+import { FiMap } from 'react-icons/fi'
 
 function TourDetail() {
   const [tourDetail, setTourDetail] = useState([]);
@@ -36,10 +37,16 @@ function TourDetail() {
   const [comments, setComments] = useState([]);
   const [commentContent, setCommentContent] = useState("");
   const [checkComment, setCheckComment] = useState(1);
-  const [rating, setRating] = useState(0)
-  const [commentCounter, setCommentCounter] = useState(null)
+  const [rating, setRating] = useState(0);
+  const [commentCounter, setCommentCounter] = useState(null);
 
   const user = useSelector((state) => state.user.user);
+
+  const formatter = new Intl.NumberFormat("vi-VN", {
+    style: "currency",
+    currency: "VND",
+    minimumFractionDigits: 0
+  })
 
   let { tourId } = useParams();
 
@@ -54,13 +61,13 @@ function TourDetail() {
     try {
       let res = await Apis.get(endpoints["tour-detail"](tourId), {
         headers: {
-        "Authorization": `Bearer ${cookies.load("access_token")}`
-        }
+          Authorization: `Bearer ${cookies.load("access_token")}`,
+        },
       });
-      
+
       setTourDetail(res.data);
       setRating(res.data.rate);
-      setCommentCounter(res.data.comment_count)
+      setCommentCounter(res.data.comment_count);
     } catch (error) {
       console.log(error);
     }
@@ -126,18 +133,22 @@ function TourDetail() {
   const handleRating = async (rate) => {
     try {
       if (window.confirm("Bạn muốn đánh giá tour du lịch này?")) {
-        const res = await Apis.post(endpoints["rating"](tourId), {
-          "rating": rate
-        }, {
-          headers: {
-            "Authorization": `Bearer ${cookies.load("access_token")}`
+        const res = await Apis.post(
+          endpoints["rating"](tourId),
+          {
+            rating: rate,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${cookies.load("access_token")}`,
+            },
           }
-        })
+        );
       }
     } catch (error) {
-      console.error(error)
+      console.error(error);
     }
-  }
+  };
 
   let ratingComponent = "";
 
@@ -163,6 +174,14 @@ function TourDetail() {
         </div>
       </div>
     </form>
+  );
+
+  let booking = (
+    <div className="tour-box-btn text-center">
+      <Link to={`/login`} className="btn btn-tdetail">
+        Đặt vé
+      </Link>
+    </div>
   );
 
   if (user !== null && user !== undefined) {
@@ -193,12 +212,20 @@ function TourDetail() {
     );
 
     ratingComponent = (
-      <Rating 
+      <Rating
         emptySymbol={<img src={ratingStarEmpty} className="icon" />}
         fullSymbol={<img src={ratingStarFull} className="icon" />}
         initialRating={rating}
         onClick={handleRating}
       />
+    );
+
+    booking = (
+      <div className="tour-box-btn text-center">
+        <Link to={`/tours/${tourId}/booking`} className="btn btn-tdetail">
+          Đặt vé
+        </Link>
+      </div>
     );
   }
 
@@ -301,7 +328,9 @@ function TourDetail() {
                 </div>
                 <div className="tour-detail__content">
                   <div className="comments-area">
-                    <h4>{commentCounter === null ? "" : commentCounter} bình luận</h4>
+                    <h4>
+                      {commentCounter === null ? "" : commentCounter} bình luận
+                    </h4>
                     <div className="comments-list">
                       {comments.map((comment) => {
                         return (
@@ -350,15 +379,11 @@ function TourDetail() {
                 <div className="tour-box-price">
                   <span className="tour-box-price__text">Giá từ: </span>
                   <span className="tour-box-price__num">
-                    {tourDetail.children_price}
+                    {formatter.format(tourDetail.adults_price)}
                   </span>
-                  <span className="tour-box-price__nor"> 1.999.999đ</span>
+                  <span className="tour-box-price__nor"> {formatter.format(tourDetail.adults_price + 500000)}</span>
                 </div>
-                <div className="tour-box-btn text-center">
-                  <a href="./bookingTour.html" className="btn btn-tdetail">
-                    Đặt vé
-                  </a>
-                </div>
+                {booking}
               </div>
               <div className="tour-box-index">
                 <ul>
@@ -373,7 +398,7 @@ function TourDetail() {
                   <li>
                     <a href="#journey-map">
                       <span>
-                        <BsFillMapFill />
+                        <FiMap />
                       </span>
                       Lịch trình
                     </a>

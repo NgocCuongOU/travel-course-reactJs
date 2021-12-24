@@ -171,7 +171,7 @@ function Footer() {
             <div className="col col-lg-12">
               <div className="copy-right">
                 <p>
-                  Copyright © 2021 {document.write(new Date().getFullYear())}
+                  Copyright © 2021
                   Đã đăng kí bản quyền | Mọi thông tin xin liên hệ về{" "}
                   <strong>Travel CK</strong>.
                 </p>

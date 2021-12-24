@@ -2,6 +2,7 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import About from "../pages/About";
 import BlogDetail from "../pages/BlogDetail";
 import Blogspage from "../pages/BlogsPage";
+import Booking from "../pages/Booking";
 import Contact from "../pages/Contact";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
@@ -27,6 +28,7 @@ function Body() {
         <Route exact path="/blogs/:blogId" component={BlogDetail} />
         <Route exact path="/login" component={Login} />
         <Route exact path="/register" component={Register} />
+        <Route exact path="/tours/:tourId/booking" component={Booking} />
       </Switch>
 
       <Footer />

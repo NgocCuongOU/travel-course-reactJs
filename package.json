@@ -16,6 +16,7 @@
     "npm": "^8.1.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.0-rc.1",
+    "react-cookies": "^0.1.1",
     "react-data-components": "^1.2.0",
     "react-dom": "^17.0.2",
     "react-google-maps": "^9.4.5",
@@ -53,8 +54,13 @@
       "last 1 safari version"
     ]
   },
-  "babel": {      
-    "presets": ["@babel/preset-react", "@babel/preset-env"],
-    "plugins": ["@emotion"]
+  "babel": {
+    "presets": [
+      "@babel/preset-react",
+      "@babel/preset-env"
+    ],
+    "plugins": [
+      "@emotion"
+    ]
   }
 }

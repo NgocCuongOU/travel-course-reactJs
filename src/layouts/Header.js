@@ -3,7 +3,6 @@ import cookies from "react-cookies";
 import { useDispatch, useSelector } from "react-redux";
 
 import { logoutUser } from "../ActionCreator/userCreator";
-import { SiFacebook, SiInstagram } from "react-icons/si";
 import logo from "../images/logo.png";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaUserCircle } from "react-icons/fa"
