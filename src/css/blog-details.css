@@ -34,6 +34,10 @@
   margin-right: 8px;
 }
 
+.blog-item .blog-item__reaction p span.like.active svg {
+  color: rgb(179, 7, 7);
+}
+
 .blog-item .blog-item__reaction p span svg {
   cursor: pointer;
 }
@@ -42,7 +46,6 @@
   display: inline-block;
 }
 
-.blog-item .blog-item__reaction p span svg:last-child,
 .blog-item__reaction .like-info.liked span svg:first-child {
   display: none;
 }

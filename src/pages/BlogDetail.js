@@ -36,6 +36,7 @@ function BlogDetail() {
   const [checkComment, setCheckComment] = useState(1);
   const [views, setViews] = useState(null);
   const [showCommentsCount, setShowCommentsCount] = useState(null);
+  const [like, setLike] = useState(0);
 
   const user = useSelector((state) => state.user.user);
   const location = useLocation();
@@ -46,12 +47,17 @@ function BlogDetail() {
     handleLoadView();
     loadComments();
     loadBlog();
-  }, [checkComment, location.pathname]);
+  }, [checkComment, location.pathname, like]);
 
   const loadBlog = async () => {
     try {
-      const res = await Apis.get(endpoints["blog-detail"](blogId));
+      const res = await Apis.get(endpoints["blog-detail"](blogId), {
+        headers: {
+          Authorization: `Bearer ${cookies.load("access_token")}`,
+        },
+      });
       setBlogDetail(res.data);
+      setLike(res.data.type);
       setShowCommentsCount(res.data.comment_count);
     } catch (error) {
       console.error(error);
@@ -73,6 +79,48 @@ function BlogDetail() {
       setViews(res.data);
     } catch (error) {
       console.log(error);
+    }
+  };
+
+  const handleLikePost = async (e) => {
+    let stateLike = document.querySelector(".like").dataset;
+    console.log(stateLike);
+    if (stateLike.like === "0") {
+      try {
+        const res = await Apis.post(
+          endpoints["like"](blogId),
+          {
+            type: 1,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${cookies.load("access_token")}`,
+            },
+          }
+        );
+
+        setLike(1);
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (stateLike.like === "1") {
+      try {
+        const res = await Apis.post(
+          endpoints["like"](blogId),
+          {
+            type: 0,
+          },
+          {
+            headers: {
+              Authorization: `Bearer ${cookies.load("access_token")}`,
+            },
+          }
+        );
+
+        setLike(0);
+      } catch (error) {
+        console.log(error);
+      }
     }
   };
 
@@ -216,11 +264,14 @@ function BlogDetail() {
             </div>
             <div className="blog-item__reaction">
               <p className="like-info">
-                <span className="like">
-                  <BsHeart />
+                <span
+                  className={like === 1 ? `like active` : `like`}
+                  onClick={handleLikePost}
+                  data-like={like === 0 ? 0 : like}
+                >
                   <BsHeartFill />
                 </span>
-                <span>Bạn, và 4 người khác</span>
+                <span> và những người khác</span>
               </p>
             </div>
           </div>

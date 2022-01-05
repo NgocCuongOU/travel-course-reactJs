@@ -55,29 +55,31 @@ function Booking() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    try {
-      const res = await Apis.post(
-        endpoints["booking"](tourId),
-        {
-          adults: adults,
-          children: children,
-          total: total,
-        },
-        {
-          headers: {
-            Authorization: `Bearer ${cookies.load("access_token")}`,
+    if(window.confirm("Bạn muốn đặt chuyến đi này?")) {
+      try {
+        const res = await Apis.post(
+          endpoints["booking"](tourId),
+          {
+            adults: adults,
+            children: children,
+            total: total,
           },
-        }
-      );
-
-      alert(`
-      ---------- Bạn đã đặt vé thành công! --------- 
-      Cám ơn quý khách đã ủng hộ dịch vụ của chúng tôi!`
-      );
-      history.push("/");
-    } catch (error) {
-      console.error(error);
-    }
+          {
+            headers: {
+              Authorization: `Bearer ${cookies.load("access_token")}`,
+            },
+          }
+        );
+        
+        alert(`
+        ---------- Bạn đã đặt vé thành công! --------- 
+        Cám ơn quý khách đã ủng hộ dịch vụ của chúng tôi!`
+        );
+        history.push("/");
+      } catch (error) {
+        console.error(error);
+      }
+    }   
   };
 
   return (

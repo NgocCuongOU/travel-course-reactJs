@@ -1,3 +1,5 @@
+import GoogleLogin from 'react-google-login'
+
 import "../css/main.css";
 import "../css/bookTour.css";
 import "../css/login.css";
@@ -14,6 +16,7 @@ import FormLoginLeft from "../components/FormLoginLeft";
 function Login() {
   const [username, setUsername] = useState();
   const [password, setPassword] = useState();
+  const [googleData, setGoogleData] = useState();
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -53,6 +56,19 @@ function Login() {
     }
   };
 
+  const handleFailure = (result) => {
+    alert(result)
+  }
+
+  const handleLoginGoogle =  (googleData) => {
+    setGoogleData(googleData.profileObj)
+    cookies.save("user", googleData.profileObj);
+
+    dispatch(loginUser(googleData.profileObj));
+
+    history.push("/");
+  }
+
   return (
     <div id="main">
       <div className="book-tour-wrap">
@@ -76,25 +92,19 @@ function Login() {
                   className="form"
                   id="form-2"
                 >
+                  <GoogleLogin className="login-with-another google"
+                      clientId={process.env.REACT_APP_GOOGLE_CLIENT_ID}
+                      buttonText='Đăng nhập với tài khoản Google'
+                      onSuccess={handleLoginGoogle}
+                      onFailure={handleFailure}
+                      cookiePolicy={'single_host_origin'}
+                  >
+                  </GoogleLogin>
                   <div className="login-with-another">
-                    <div className="google-thumb">
-                      <a href="#">
-                        <img src={googleIcon} alt="google-icon" />
-                      </a>
+                    <div class="google-thumb">
+                      <a href="#"><AiFillFacebook /></a>
                     </div>
-                    <p>
-                      <a href="#">Đăng nhập với tài khoản Google</a>
-                    </p>
-                  </div>
-                  <div className="login-with-another">
-                    <div className="google-thumb">
-                      <a href="#">
-                        <AiFillFacebook />
-                      </a>
-                    </div>
-                    <p>
-                      <a href="#">Đăng nhập với tài khoản Facebook</a>
-                    </p>
+                    <p><a href="#">Đăng nhập với tài khoản Facebook</a></p>
                   </div>
                   <div className="space-second">Hoặc</div>
                   <div className="form-group">
@@ -133,7 +143,7 @@ function Login() {
                   <div className="form-extends">
                     <p>
                       Bạn chưa có tài khoản? Hãy{" "}
-                      <a href="./registerPage.html">đăng ký</a> ngay!
+                      <a href="/register">đăng ký</a> ngay!
                     </p>
                   </div>
                 </form>

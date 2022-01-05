@@ -21,7 +21,8 @@ export let endpoints = {
   "recently-post-main": "/posts/recently_posts_main",
   "related-post": (postId) => `/posts/${postId}/related_posts/`,
   "incre-views": (postId) => `/posts/${postId}/views`,
-  "booking": (tourId) => `/tours/${tourId}/booking/`
+  "booking": (tourId) => `/tours/${tourId}/booking/`,
+  "like": (postId) => `/posts/${postId}/like/`
 };
 
 export default axios.create ({

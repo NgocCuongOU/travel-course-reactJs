@@ -47,7 +47,7 @@ function Header() {
     uiUser = (
       <div className="wrap">
         <FaUserCircle className="icon-auth"/>
-        <span className="user-header">Chào, {user.username}</span>
+        <span className="user-header">Chào, {user.email}</span>
         <IoIosArrowDown className="icon-auth"/>
         <i className="fas fa-angle-down user-down"></i>
         <ul className="user-dropdown">
@@ -96,7 +96,7 @@ function Header() {
               </h1>
             </div>
           </div>
-          <div className="col col-md-6 col-lg-8">
+          <div className="col col-md-6 col-lg-6">
             <ul className="navbar-list">
               <li className="navbar-list__item active">
                 <Link to="/">Trang chủ</Link>
@@ -128,7 +128,7 @@ function Header() {
               </li>
             </ul>
           </div>
-          <div className="col col-md-4 col-lg-2">
+          <div className="col col-md-4 col-lg-4">
             <div className="login">
               <div className="user-wrapper">{uiUser}</div>
             </div>
